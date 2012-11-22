@@ -8,6 +8,7 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
+-include src/graphic/subdir.mk
 -include src/OpenUtility/Utility/Stream/subdir.mk
 -include src/OpenUtility/Utility/Parallelism/subdir.mk
 -include src/OpenUtility/Utility/Network/subdir.mk
@@ -59,7 +60,7 @@ all: RaspberryPi
 RaspberryPi: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C++ Linker'
-	arm-linux-gnueabihf-g++ -L/home/raspberry/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/lib -L/home/developpeur/workspace/RaspberryPi/libs -L/opt/vc/lib/ -L/home/developpeur/workspace/RaspberryPi/libs/libpng -L/home/raspberry/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/libc/lib -L/home/raspberry/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/libc/lib/arm-linux-gnueabihf -L/home/raspberry/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/lib/gcc/arm-linux-gnueabihf/4.7.2 -L/home/raspberry/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/libexec/gcc/arm-linux-gnueabihf/4.7.2 -rdynamic -pthread -Wl,-rpath /opt/vc/lib -Wl,-rpath-link /opt/vc/lib -Wl,-rpath-link /home/developpeur/workspace/RaspberryPi/libs -o "RaspberryPi" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-linux-gnueabihf-g++ -L/opt/vc/lib -L/home/developpeur/workspace/RaspberryPi/include/libpng -L/home/developpeur/workspace/RaspberryPi/libs -L/home/developpeur/workspace/RaspberryPi/libs/libpng -rdynamic -pthread -Wl,-rpath /opt/vc/lib -Wl,-rpath-link /opt/vc/lib -Wl,-rpath-link /home/developpeur/workspace/RaspberryPi/libs -o "RaspberryPi" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

@@ -4,5 +4,5 @@
 
 USER_OBJS :=
 
-LIBS := -lGLESv2 -lEGL -lopenmaxil -lbcm_host -lilclient -lpng
+LIBS := -lGLESv2 -lpng -lEGL -lopenmaxil -lbcm_host -lilclient
 

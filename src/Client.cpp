@@ -6,7 +6,8 @@
 Client::Client() :
 	nbIndexes(0),
 	Shaders(NULL),
-	TexQuad(NULL)
+	//TexQuad(NULL)
+	square(NULL)
 {
 }
 
@@ -42,7 +43,8 @@ void Client::Init()
 	glEnable(GL_DEPTH_TEST);
 
 	// Data to visualize
-	TexQuad=new CTextureQuad("../content/polytech.png",20,20);
+	//TexQuad=new CTextureQuad("../content/polytech.png",20,20);
+	square =  new DrawSquare(8, 4);
 	GL_CHECK();
 
 	// Matrix operations
@@ -50,20 +52,22 @@ void Client::Init()
 	float factor=1;
 
 //	MVmatrix*=OpenUtility::CMat4x4<float>().SetLookAt(0,2,3,0,0,0,0,1,0);
-	MVmatrix*=OpenUtility::CMat4x4<float>().SetLookAt(0,0,1.2,0,0,0,0,1,0);
+	MVmatrix*=OpenUtility::CMat4x4<float>().SetLookAt(0,0,1,0,0,0,0,1,0);
 	Pmatrix.SetFrustum(-factor,factor,-factor*GetHeight()/float(GetWidth()),factor*GetHeight()/float(GetWidth()),0.1f,1000);
 	glUniformMatrix4fv(Shaders->RenderingShader["u_Nmatrix"],1,GL_FALSE,MVmatrix.GetMatrix());
 	GL_CHECK();
 	glUniformMatrix4fv(Shaders->RenderingShader["u_MVPmatrix"],1,GL_FALSE,(Pmatrix*MVmatrix).GetMatrix());
 	GL_CHECK();
 
+	//cadre de la fenêtre utilisé pour l'affichage
 	glViewport(0,0,GetWidth(),GetHeight());
 	GL_CHECK();
 }
 
 void Client::Uninit()
 {
-	delete TexQuad;
+//	delete TexQuad;
+	delete square;
 	glDeleteBuffers(1,&VBObuffer);
 	glDeleteBuffers(1,&VBOtex);
 	glDeleteBuffers(1,&VBOindex);
@@ -83,15 +87,16 @@ void Client::PreRender()
 
 void Client::Render()
 {
-	glClearColor(0.0f, 0.4f, 0.5f, 0.5f);
+	glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	glActiveTexture(GL_TEXTURE0);
-	glUniform1i(Shaders->RenderingShader["u_texId"],0);
-	TexQuad->AttachAttribToData(Shaders->RenderingShader["vPos"],Shaders->RenderingShader["vNorm"],Shaders->RenderingShader["vTexCoord"]);
-
+	//glActiveTexture(GL_TEXTURE0);
+	//glUniform1i(Shaders->RenderingShader["u_texId"],0);
+	//TexQuad->AttachAttribToData(Shaders->RenderingShader["vPos"],Shaders->RenderingShader["vNorm"],Shaders->RenderingShader["vTexCoord"]);
+	square->AttachAttribToData(Shaders->RenderingShader["vPos"], Shaders->RenderingShader["vNorm"]);
 	for (int i=0;i<1;i++)
-		TexQuad->Draw();
+		square->Draw();
+		//TexQuad->Draw();
 	GL_CHECK();
 }
 
