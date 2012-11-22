@@ -2,8 +2,6 @@
 #include <ctype.h>
 #include "../Filesystem/FileHandling.h"
 
-#include "../../../GlWindow.h"
-
 OpenUtility::CVector<CTexture::CTextureLoader> CTexture::Loaders;
 
 void CTexture::RegisterTextureLoader(CTexture::CTextureLoader *texLoader)

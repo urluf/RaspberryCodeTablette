@@ -25,8 +25,6 @@ GlWindow::GlWindow() :
 	_end(true)
 	,idThreadEvent(0)
 	,Display(0)
-//	_SynKey(5),
-//	,_SynMouseBt(5)
 {
 	// Control end of processes
 	_mutexEnd=OpenUtility::InitMutex();
@@ -417,7 +415,7 @@ void GlWindow::ReadEvent(SPeripheral *periph)
 		switch(ev[i].type)
 		{
 		case EV_SYN:
-std::cout << "EV_SYN: " << ev[i].code << std::endl;
+//std::cout << "EV_SYN: " << ev[i].code << std::endl;
 			OpenUtility::CTable<SEventValue> *_SynEvt;
 			if (periph->GetKeys() && periph->GetKeys()->_SynKey.GetSize())
 			{
@@ -653,8 +651,8 @@ std::cout << "EV_SYN: " << ev[i].code << std::endl;
 			break;
 
 		case EV_ABS:
-if (ev[i].value>=ABS_MT_SLOT && ev[i].value<=ABS_MT_DISTANCE)
-	printf("EV_ABS_MT: %x\n",ev[i].value);
+//if (ev[i].value>=ABS_MT_SLOT && ev[i].value<=ABS_MT_DISTANCE)
+//	printf("EV_ABS_MT: %x\n",ev[i].value);
 			if (!periph->HasAxes()) break;
 			periph->SetNewEvent(ev[i].code,ev[i].value,EETabs);
 			break;

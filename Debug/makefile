@@ -15,8 +15,15 @@ RM := rm -rf
 -include src/OpenUtility/Utility/Filesystem/subdir.mk
 -include src/OpenUtility/Utility/3D/subdir.mk
 -include src/OpenUtility/Utility/subdir.mk
--include src/OpenUtility/Template/Res/subdir.mk
 -include src/subdir.mk
+-include obj/src/OpenUtility/Utility/Stream/subdir.mk
+-include obj/src/OpenUtility/Utility/Parallelism/subdir.mk
+-include obj/src/OpenUtility/Utility/Network/subdir.mk
+-include obj/src/OpenUtility/Utility/Math/subdir.mk
+-include obj/src/OpenUtility/Utility/Filesystem/subdir.mk
+-include obj/src/OpenUtility/Utility/3D/subdir.mk
+-include obj/src/OpenUtility/Utility/subdir.mk
+-include obj/src/subdir.mk
 -include subdir.mk
 -include objects.mk
 
@@ -52,7 +59,7 @@ all: RaspberryPi
 RaspberryPi: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C++ Linker'
-	arm-linux-gnueabihf-g++ -L/home/raspberry/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/lib -L/home/raspberry/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/libc/lib -L/home/raspberry/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/libc/lib/arm-linux-gnueabihf -L/home/raspberry/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/lib/gcc/arm-linux-gnueabihf/4.7.2 -L/home/raspberry/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/libexec/gcc/arm-linux-gnueabihf/4.7.2 -o "RaspberryPi" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-linux-gnueabihf-g++ -L/home/raspberry/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/lib -L/home/developpeur/workspace/RaspberryPi/libs -L/opt/vc/lib/ -L/home/developpeur/workspace/RaspberryPi/libs/libpng -L/home/raspberry/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/libc/lib -L/home/raspberry/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/libc/lib/arm-linux-gnueabihf -L/home/raspberry/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/lib/gcc/arm-linux-gnueabihf/4.7.2 -L/home/raspberry/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/libexec/gcc/arm-linux-gnueabihf/4.7.2 -rdynamic -pthread -Wl,-rpath /opt/vc/lib -Wl,-rpath-link /opt/vc/lib -Wl,-rpath-link /home/developpeur/workspace/RaspberryPi/libs -o "RaspberryPi" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

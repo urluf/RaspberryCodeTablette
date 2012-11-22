@@ -1,7 +1,11 @@
 #ifndef _CTexture_h
 	#define _CTexture_h
 
-#include <GLES2/gl2.h>
+#ifdef GLES2
+	#include <GLES2/gl2.h>
+#else
+	#include <GL/gl.h>
+#endif
 #include "../../Template/CVector.h"
 
 class CTexture

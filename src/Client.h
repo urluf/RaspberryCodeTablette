@@ -6,6 +6,7 @@
 #include <time.h>
 #include <Utility/3D/CShaderProgram.h>
 #include <Utility/3D/CTexture.h>
+#include <Utility/3D/CTextureQuad.h>
 
 class Client : protected GlWindow
 {
@@ -73,7 +74,7 @@ private:
 	GLuint VBOtex;
 	unsigned int nbIndexes;
 	SShaders *Shaders;
-	CTexture *Texture;
+	CTextureQuad *TexQuad;
 };
 
 #endif

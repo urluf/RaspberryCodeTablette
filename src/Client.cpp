@@ -6,7 +6,7 @@
 Client::Client() :
 	nbIndexes(0),
 	Shaders(NULL),
-	Texture(NULL)
+	TexQuad(NULL)
 {
 }
 
@@ -22,7 +22,7 @@ void Client::Start()
 
 void Client::Init()
 {
-	clock_gettime(CLOCK_MONOTONIC,&_debTime);
+//	clock_gettime(CLOCK_MONOTONIC,&_debTime);
 
 	Shaders=new SShaders;
 	if (!Shaders->ShaderVertex.LoadFile("../shader/rendering.vert"))
@@ -42,65 +42,7 @@ void Client::Init()
 	glEnable(GL_DEPTH_TEST);
 
 	// Data to visualize
-	const SVertex VertexArray[]={
-			{
-				{-1.0,-1.0,1.0},{0.0,0.0,1.0}
-			},{
-				{1.0,-1.0,1.0},{0.0,0.0,1.0}
-			},{
-				{-1.0,1.0,1.0},{0.0,0.0,1.0}
-			},{
-				{1.0,1.0,1.0},{0.0,0.0,1.0}
-			}/*,{
-				{-1.0,-1.0,-1.0},{0.0,-1.0,0.0}
-			},{
-				{1.0,-1.0,-1.0},{0.0,-1.0,0.0}
-			},{
-				{-1.0,-1.0,1.0},{0.0,-1.0,0.0}
-			},{
-				{1.0,-1.0,1.0},{0.0,-1.0,0.0}
-			},{
-				{-1.0,-1.0,-1.0},{-1.0,0.0,0.0}
-			},{
-				{-1.0,1.0,-1.0},{-1.0,0.0,0.0}
-			},{
-				{-1.0,-1.0,1.0},{-1.0,0.0,0.0}
-			},{
-				{-1.0,1.0,1.0},{-1.0,0.0,0.0}
-			}*/
-		};
-
-	const GLubyte VertexIndices[]={0,1,2,3/*,4,5,6,7*/};
-	nbIndexes=sizeof(VertexIndices)/sizeof(GLubyte);
-
-	const STexture TexArray[]={
-			{{0.0,-0.5}},
-			{{1.0,-0.5}},
-			{{0.0,1.0}},
-			{{1.0,1.0}}/*,
-			{{0.0,1.0}},
-			{{1.0,1.0}},
-			{{0.0,0.0}},
-			{{1.0,0.0}},
-			{{0.0,1.0}},
-			{{1.0,1.0}},
-			{{0.0,0.0}},
-			{{1.0,0.0}}*/
-		};
-
-	glGenBuffers(1,&VBObuffer);
-	glBindBuffer(GL_ARRAY_BUFFER,VBObuffer);
-	glBufferData(GL_ARRAY_BUFFER,sizeof(VertexArray),VertexArray,GL_STATIC_DRAW);
-	GL_CHECK();
-
-	glGenBuffers(1,&VBOtex);
-	glBindBuffer(GL_ARRAY_BUFFER,VBOtex);
-	glBufferData(GL_ARRAY_BUFFER,sizeof(TexArray),TexArray,GL_STATIC_DRAW);
-	GL_CHECK();
-
-	glGenBuffers(1,&VBOindex);
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,VBOindex);
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER,sizeof(VertexIndices),VertexIndices,GL_STATIC_DRAW);
+	TexQuad=new CTextureQuad("../content/polytech.png",20,20);
 	GL_CHECK();
 
 	// Matrix operations
@@ -114,17 +56,14 @@ void Client::Init()
 	GL_CHECK();
 	glUniformMatrix4fv(Shaders->RenderingShader["u_MVPmatrix"],1,GL_FALSE,(Pmatrix*MVmatrix).GetMatrix());
 	GL_CHECK();
-	glViewport(0,0,GetWidth(),GetHeight());
 
-	Texture=CTexture::LoadTexture("../content/polytech.png");
-if (Texture) std::cout << "TEX OK\n" << std::endl;
-else std::cout << "TEX KO...\n" << std::endl;
+	glViewport(0,0,GetWidth(),GetHeight());
 	GL_CHECK();
 }
 
 void Client::Uninit()
 {
-	delete Texture;
+	delete TexQuad;
 	glDeleteBuffers(1,&VBObuffer);
 	glDeleteBuffers(1,&VBOtex);
 	glDeleteBuffers(1,&VBOindex);
@@ -133,7 +72,7 @@ void Client::Uninit()
 void Client::PreRender()
 {
 	struct timespec curTime;
-	clock_gettime(CLOCK_MONOTONIC,&curTime);
+//	clock_gettime(CLOCK_MONOTONIC,&curTime);
 
 	curTime=DiffTime(_debTime,curTime);
 	if (curTime.tv_sec>10)
@@ -147,29 +86,12 @@ void Client::Render()
 	glClearColor(0.0f, 0.4f, 0.5f, 0.5f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	glBindBuffer(GL_ARRAY_BUFFER,VBObuffer);
-	glVertexAttribPointer(Shaders->RenderingShader["vPos"],3,GL_FLOAT,GL_FALSE,sizeof(SVertex),(void*)offsetof(SVertex,position));
-	glEnableVertexAttribArray(Shaders->RenderingShader["vPos"]);
-	glVertexAttribPointer(Shaders->RenderingShader["vNorm"],3,GL_FLOAT,GL_FALSE,sizeof(SVertex),(void*)offsetof(SVertex,normal));
-	glEnableVertexAttribArray(Shaders->RenderingShader["vNorm"]);
-	glBindBuffer(GL_ARRAY_BUFFER,VBOtex);
-	glVertexAttribPointer(Shaders->RenderingShader["vTexCoord"],2,GL_FLOAT,GL_FALSE,sizeof(STexture),(void*)0);
-	glEnableVertexAttribArray(Shaders->RenderingShader["vTexCoord"]);
-
-//	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,VBOindex);
-//	glDrawElements(GL_TRIANGLE_STRIP,4,GL_UNSIGNED_BYTE,(void*)0);
-
-	if (Texture)
-	{
-		// Bind the texture
-		glActiveTexture(GL_TEXTURE0);
-		glBindTexture(GL_TEXTURE_2D,Texture->GetId());
-		// Set the sampler texture unit to 0
-		glUniform1i(Shaders->RenderingShader["u_texId"],0);
-	}
+	glActiveTexture(GL_TEXTURE0);
+	glUniform1i(Shaders->RenderingShader["u_texId"],0);
+	TexQuad->AttachAttribToData(Shaders->RenderingShader["vPos"],Shaders->RenderingShader["vNorm"],Shaders->RenderingShader["vTexCoord"]);
 
 	for (int i=0;i<1;i++)
-		glDrawArrays(GL_TRIANGLE_STRIP,i*4,4);
+		TexQuad->Draw();
 	GL_CHECK();
 }
 

@@ -5,9 +5,7 @@
 	<storageModule moduleId="org.eclipse.cdt.core.settings">
 		<cconfiguration id="cdt.managedbuild.config.gnu.exe.debug.1245532817">
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.exe.debug.1245532817" moduleId="org.eclipse.cdt.core.settings" name="Debug">
-				<externalSettings>
-					<externalSetting/>
-				</externalSettings>
+				<externalSettings/>
 				<extensions>
 					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
@@ -22,45 +20,121 @@
 					<folderInfo id="cdt.managedbuild.config.gnu.exe.debug.1245532817." name="/" resourcePath="">
 						<toolChain id="cdt.managedbuild.toolchain.gnu.exe.debug.774307129" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.exe.debug">
 							<targetPlatform id="cdt.managedbuild.target.gnu.platform.exe.debug.1755125369" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.exe.debug"/>
-							<builder buildPath="${workspace_loc:/RaspberryPi/Debug}" id="cdt.managedbuild.target.gnu.builder.exe.debug.2033908265" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="cdt.managedbuild.target.gnu.builder.exe.debug"/>
+							<builder buildPath="${workspace_loc:/RaspberryPi/Debug}" id="cdt.managedbuild.target.gnu.builder.exe.debug.2033908265" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="cdt.managedbuild.target.gnu.builder.exe.debug">
+								<outputEntries>
+									<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="outputPath" name="Debug"/>
+									<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="outputPath" name="Release"/>
+								</outputEntries>
+							</builder>
 							<tool id="cdt.managedbuild.tool.gnu.archiver.base.984172699" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base"/>
-							<tool command="arm-linux-gnueabihf-g++" id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1649030773" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug">
+							<tool command="arm-linux-gnueabihf-g++" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} -c ${INPUTS}" id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1649030773" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug">
 								<option id="gnu.cpp.compiler.exe.debug.option.optimization.level.55822660" name="Optimization Level" superClass="gnu.cpp.compiler.exe.debug.option.optimization.level" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
-								<option id="gnu.cpp.compiler.exe.debug.option.debugging.level.1192862596" name="Debug Level" superClass="gnu.cpp.compiler.exe.debug.option.debugging.level" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.exe.debug.option.debugging.level.1192862596" name="Debug Level" superClass="gnu.cpp.compiler.exe.debug.option.debugging.level" value="gnu.cpp.compiler.debugging.level.default" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.include.paths.521813086" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="/home/raspberry/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/include"/>
+									<listOptionValue builtIn="false" value="/home/developpeur/workspace/RaspberryPi/include"/>
+									<listOptionValue builtIn="false" value="/opt/vc/include/"/>
+									<listOptionValue builtIn="false" value="/opt/vc/include/interface/vcos/pthreads"/>
+									<listOptionValue builtIn="false" value="/home/developpeur/workspace/RaspberryPi/include/libpng"/>
+									<listOptionValue builtIn="false" value="/home/developpeur/workspace/RaspberryPi/src/OpenUtility"/>
 									<listOptionValue builtIn="false" value="/home/raspberry/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/libc/usr/include"/>
 									<listOptionValue builtIn="false" value="/home/raspberry/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/lib/gcc/arm-linux-gnueabihf/4.7.2/include-fixed"/>
 									<listOptionValue builtIn="false" value="/home/raspberry/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/lib/gcc/arm-linux-gnueabihf/4.7.2/include"/>
 									<listOptionValue builtIn="false" value="/home/raspberry/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/lib/gcc/arm-linux-gnueabihf/4.7.2/finclude"/>
+								</option>
+								<option id="gnu.cpp.compiler.option.other.other.1690220270" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" value="" valueType="string"/>
+								<option id="gnu.cpp.compiler.option.debugging.other.1221978479" name="Other debugging flags" superClass="gnu.cpp.compiler.option.debugging.other" value="-I src/OpenUtility" valueType="string"/>
+								<option id="gnu.cpp.compiler.option.preprocessor.def.1274692275" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="GLES2"/>
+									<listOptionValue builtIn="false" value="__STDC_CONSTANT_MACROS"/>
+									<listOptionValue builtIn="false" value="__STDC_LIMIT_MACROS"/>
+									<listOptionValue builtIn="false" value="TARGET_POSIX"/>
+									<listOptionValue builtIn="false" value="_LINUX"/>
+									<listOptionValue builtIn="false" value="PIC"/>
+									<listOptionValue builtIn="false" value="_REENTRANT"/>
+									<listOptionValue builtIn="false" value="_LARGEFILE64_SOURCE"/>
+									<listOptionValue builtIn="false" value="_FILE_OFFSET_BITS=64"/>
+									<listOptionValue builtIn="false" value="HAVE_LIBOPENMAX=2"/>
+									<listOptionValue builtIn="false" value="OMX"/>
+									<listOptionValue builtIn="false" value="OMX_SKIP64BIT"/>
+									<listOptionValue builtIn="false" value="USE_EXTERNAL_OMX"/>
+									<listOptionValue builtIn="false" value="HAVE_LIBBCM_HOST"/>
+									<listOptionValue builtIn="false" value="USE_EXTERNAL_LIBBCM_HOST"/>
+									<listOptionValue builtIn="false" value="USE_VCHIQ_ARM"/>
+									<listOptionValue builtIn="false" value="STANDALONE"/>
+								</option>
+								<option id="gnu.cpp.compiler.option.optimization.flags.2032136445" name="Other optimization flags" superClass="gnu.cpp.compiler.option.optimization.flags" value="-fPIC -ftree-vectorize -pipe -Wno-psabi -pthread" valueType="string"/>
+								<option id="gnu.cpp.compiler.option.preprocessor.undef.1576184195" name="Undefined symbols (-U)" superClass="gnu.cpp.compiler.option.preprocessor.undef" valueType="undefDefinedSymbols">
+									<listOptionValue builtIn="false" value="_FORTIFY_SOURCE"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.2142140503" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
 							<tool command="arm-linux-gnueabihf-gcc" id="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.484342828" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.debug">
 								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.exe.debug.option.optimization.level.404391864" name="Optimization Level" superClass="gnu.c.compiler.exe.debug.option.optimization.level" valueType="enumerated"/>
 								<option id="gnu.c.compiler.exe.debug.option.debugging.level.983743659" name="Debug Level" superClass="gnu.c.compiler.exe.debug.option.debugging.level" value="gnu.c.debugging.level.max" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.include.paths.726966400" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="/home/raspberry/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/include"/>
+									<listOptionValue builtIn="false" value="/home/developpeur/workspace/RaspberryPi/include"/>
+									<listOptionValue builtIn="false" value="/opt/vc/include/"/>
+									<listOptionValue builtIn="false" value="/opt/vc/include/interface/vcos/pthreads"/>
+									<listOptionValue builtIn="false" value="/home/developpeur/workspace/RaspberryPi/include/libpng"/>
+									<listOptionValue builtIn="false" value="/home/developpeur/workspace/RaspberryPi/src/OpenUtility"/>
+									<listOptionValue builtIn="false" value="/home/raspberry/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/libc/usr/include"/>
+									<listOptionValue builtIn="false" value="/home/raspberry/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/lib/gcc/arm-linux-gnueabihf/4.7.2/include-fixed"/>
+									<listOptionValue builtIn="false" value="/home/raspberry/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/lib/gcc/arm-linux-gnueabihf/4.7.2/include"/>
+									<listOptionValue builtIn="false" value="/home/raspberry/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/lib/gcc/arm-linux-gnueabihf/4.7.2/finclude"/>
+								</option>
+								<option id="gnu.c.compiler.option.preprocessor.def.symbols.2060536902" superClass="gnu.c.compiler.option.preprocessor.def.symbols" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="GLES2"/>
+									<listOptionValue builtIn="false" value="__STDC_CONSTANT_MACROS"/>
+									<listOptionValue builtIn="false" value="__STDC_LIMIT_MACROS"/>
+									<listOptionValue builtIn="false" value="TARGET_POSIX"/>
+									<listOptionValue builtIn="false" value="_LINUX"/>
+									<listOptionValue builtIn="false" value="PIC"/>
+									<listOptionValue builtIn="false" value="_REENTRANT"/>
+									<listOptionValue builtIn="false" value="_LARGEFILE64_SOURCE"/>
+									<listOptionValue builtIn="false" value="_FILE_OFFSET_BITS=64"/>
+									<listOptionValue builtIn="false" value="HAVE_LIBOPENMAX=2"/>
+									<listOptionValue builtIn="false" value="OMX"/>
+									<listOptionValue builtIn="false" value="OMX_SKIP64BIT"/>
+									<listOptionValue builtIn="false" value="USE_EXTERNAL_OMX"/>
+									<listOptionValue builtIn="false" value="HAVE_LIBBCM_HOST"/>
+									<listOptionValue builtIn="false" value="USE_EXTERNAL_LIBBCM_HOST"/>
+									<listOptionValue builtIn="false" value="USE_VCHIQ_ARM"/>
+									<listOptionValue builtIn="false" value="STANDALONE"/>
+								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1166691351" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.linker.exe.debug.224354471" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.exe.debug"/>
-							<tool command="arm-linux-gnueabihf-g++" id="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug.1357115120" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug">
-								<option id="gnu.cpp.link.option.libs.1807844162" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs"/>
-								<option id="gnu.cpp.link.option.paths.1145054698" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
-									<listOptionValue builtIn="false" value="/home/raspberry/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/lib"/>
-									<listOptionValue builtIn="false" value="/home/raspberry/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/libc/lib"/>
-									<listOptionValue builtIn="false" value="/home/raspberry/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/libc/lib/arm-linux-gnueabihf"/>
-									<listOptionValue builtIn="false" value="/home/raspberry/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/lib/gcc/arm-linux-gnueabihf/4.7.2"/>
-									<listOptionValue builtIn="false" value="/home/raspberry/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/libexec/gcc/arm-linux-gnueabihf/4.7.2"/>
-								</option>
+							<tool command="arm-linux-gnueabihf-g++" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" id="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug.1357115120" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug">
+								<option id="gnu.cpp.link.option.libs.1807844162" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs"/>
+								<option id="gnu.cpp.link.option.paths.1145054698" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths"/>
+								<option id="gnu.cpp.link.option.flags.767471372" name="Linker flags" superClass="gnu.cpp.link.option.flags" value="-rdynamic -pthread -Wl,-rpath /opt/vc/lib -Wl,-rpath-link /opt/vc/lib -Wl,-rpath-link /home/developpeur/workspace/RaspberryPi/libs" valueType="string"/>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.2009376731" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
 								</inputType>
 							</tool>
 							<tool command="arm-linux-gnueabihf-as" id="cdt.managedbuild.tool.gnu.assembler.exe.debug.55324501" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.exe.debug">
+								<option id="gnu.both.asm.option.include.paths.7978743" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="/home/raspberry/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/include"/>
+									<listOptionValue builtIn="false" value="/home/developpeur/workspace/RaspberryPi/include"/>
+									<listOptionValue builtIn="false" value="/opt/vc/include/"/>
+									<listOptionValue builtIn="false" value="/opt/vc/include/interface/vcos/pthreads"/>
+									<listOptionValue builtIn="false" value="/home/developpeur/workspace/RaspberryPi/include/libpng"/>
+									<listOptionValue builtIn="false" value="/home/developpeur/workspace/RaspberryPi/src/OpenUtility"/>
+									<listOptionValue builtIn="false" value="/home/raspberry/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/libc/usr/include"/>
+									<listOptionValue builtIn="false" value="/home/raspberry/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/lib/gcc/arm-linux-gnueabihf/4.7.2/include-fixed"/>
+									<listOptionValue builtIn="false" value="/home/raspberry/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/lib/gcc/arm-linux-gnueabihf/4.7.2/include"/>
+									<listOptionValue builtIn="false" value="/home/raspberry/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/lib/gcc/arm-linux-gnueabihf/4.7.2/finclude"/>
+								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.2098826207" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
 						</toolChain>
 					</folderInfo>
+					<sourceEntries>
+						<entry excluding="src/OpenUtility/Template/Res|graphic" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+					</sourceEntries>
 				</configuration>
 			</storageModule>
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
@@ -106,6 +180,9 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
+					<sourceEntries>
+						<entry excluding="graphic|src/OpenUtility/Template/Res" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+					</sourceEntries>
 				</configuration>
 			</storageModule>
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
@@ -120,11 +197,11 @@
 	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 	<storageModule moduleId="scannerConfiguration">
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.release.269062599;cdt.managedbuild.config.gnu.exe.release.269062599.;cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.953988484;cdt.managedbuild.tool.gnu.cpp.compiler.input.1887495082">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileCPP"/>
-		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.release.269062599;cdt.managedbuild.config.gnu.exe.release.269062599.;cdt.managedbuild.tool.gnu.c.compiler.exe.release.739326468;cdt.managedbuild.tool.gnu.c.compiler.input.1872635702">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.release.269062599;cdt.managedbuild.config.gnu.exe.release.269062599.;cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.953988484;cdt.managedbuild.tool.gnu.cpp.compiler.input.1887495082">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileCPP"/>
 		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.debug.1245532817;cdt.managedbuild.config.gnu.exe.debug.1245532817.;cdt.managedbuild.tool.gnu.c.compiler.exe.debug.484342828;cdt.managedbuild.tool.gnu.c.compiler.input.1166691351">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC"/>
@@ -133,4 +210,5 @@
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileCPP"/>
 		</scannerConfigBuildInfo>
 	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
 </cproject>
