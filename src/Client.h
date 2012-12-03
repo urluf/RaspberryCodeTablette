@@ -8,6 +8,7 @@
 #include <Utility/3D/CTexture.h>
 #include <Utility/3D/CTextureQuad.h>
 #include "graphic/DrawSquare.h"
+#include "graphic/DrawCircle.h"
 
 class Client : protected GlWindow
 {
@@ -70,13 +71,13 @@ private:
 
 private:
 	struct timespec _debTime;
-	GLuint VBObuffer;
 	GLuint VBOindex;
 	GLuint VBOtex;
 	unsigned int nbIndexes;
 	SShaders *Shaders;
 	//CTextureQuad *TexQuad;
-	DrawSquare *square;
+	DrawCircle *circle;
+	//DrawSquare *square;
 };
 
 #endif

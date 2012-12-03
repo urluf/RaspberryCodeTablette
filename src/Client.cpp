@@ -7,7 +7,8 @@ Client::Client() :
 	nbIndexes(0),
 	Shaders(NULL),
 	//TexQuad(NULL)
-	square(NULL)
+	//square(NULL)
+	circle(NULL)
 {
 }
 
@@ -44,7 +45,8 @@ void Client::Init()
 
 	// Data to visualize
 	//TexQuad=new CTextureQuad("../content/polytech.png",20,20);
-	square =  new DrawSquare(8, 4);
+	//square =  new DrawSquare(8, 4);
+	circle = new DrawCircle(1);
 	GL_CHECK();
 
 	// Matrix operations
@@ -67,8 +69,8 @@ void Client::Init()
 void Client::Uninit()
 {
 //	delete TexQuad;
-	delete square;
-	glDeleteBuffers(1,&VBObuffer);
+	delete circle;
+	//delete square;
 	glDeleteBuffers(1,&VBOtex);
 	glDeleteBuffers(1,&VBOindex);
 }
@@ -93,9 +95,9 @@ void Client::Render()
 	//glActiveTexture(GL_TEXTURE0);
 	//glUniform1i(Shaders->RenderingShader["u_texId"],0);
 	//TexQuad->AttachAttribToData(Shaders->RenderingShader["vPos"],Shaders->RenderingShader["vNorm"],Shaders->RenderingShader["vTexCoord"]);
-	square->AttachAttribToData(Shaders->RenderingShader["vPos"], Shaders->RenderingShader["vNorm"]);
+	circle->AttachAttribToData(Shaders->RenderingShader["vPos"], Shaders->RenderingShader["vNorm"]);
 	for (int i=0;i<1;i++)
-		square->Draw();
+		circle->Draw();
 		//TexQuad->Draw();
 	GL_CHECK();
 }

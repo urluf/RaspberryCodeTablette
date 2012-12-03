@@ -4,14 +4,17 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../src/graphic/DrawCircle.cpp \
 ../src/graphic/DrawSquare.cpp \
 ../src/graphic/Windows.cpp 
 
 OBJS += \
+./src/graphic/DrawCircle.o \
 ./src/graphic/DrawSquare.o \
 ./src/graphic/Windows.o 
 
 CPP_DEPS += \
+./src/graphic/DrawCircle.d \
 ./src/graphic/DrawSquare.d \
 ./src/graphic/Windows.d 
 

@@ -21,7 +21,6 @@ struct vertexSquare{
 };
 
 
-
 public:
 	DrawSquare(double widht, double height);
 	void AttachAttribToData(GLuint vPos, GLuint vNorm);

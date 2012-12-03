@@ -90,7 +90,7 @@ src/Client.d: ../src/Client.cpp ../src/Client.h ../src/GlWindow.h \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/CTexture.h \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/CTextureQuad.h \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/CTexture.h \
- ../src/graphic/DrawSquare.h \
+ ../src/graphic/DrawSquare.h ../src/graphic/DrawCircle.h \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/CMat4x4.h \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/Res/CMat4x4.cxx \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/Res/../../Utility/3D/3D.h \
@@ -289,6 +289,8 @@ src/Client.d: ../src/Client.cpp ../src/Client.h ../src/GlWindow.h \
 /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/CTexture.h:
 
 ../src/graphic/DrawSquare.h:
+
+../src/graphic/DrawCircle.h:
 
 /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/CMat4x4.h:
 

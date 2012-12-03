@@ -47,5 +47,6 @@ void DrawSquare::SetVertex(vertexSquare &vertex, double posX, double posY){
 
 DrawSquare::~DrawSquare() {
 	// TODO Auto-generated destructor stub
+	glDeleteBuffers(1,&VBObuffer);
 }
 
