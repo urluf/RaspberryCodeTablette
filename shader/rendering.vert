@@ -4,6 +4,7 @@ attribute vec2 vTexCoord;
 
 uniform mat4 u_MVPmatrix;
 uniform mat4 u_Nmatrix;
+uniform mat4 u_trans;
 
 varying vec4 v_Color;
 varying vec3 v_Normals;
@@ -16,5 +17,8 @@ void main()
 	if (abs(vNorm.z)>0.9) v_Color = vec4(0.0,0.0,1.0,1.0);
 	//v_Normals = mat3(u_Nmatrix) * vNorm;
 	//v_texCoords = vTexCoord;
-	gl_Position = u_MVPmatrix * vPos;
+	gl_Position = u_trans * vPos;
+	gl_Position = u_MVPmatrix * gl_Position;
+
+
 }

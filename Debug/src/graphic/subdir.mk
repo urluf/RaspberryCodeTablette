@@ -6,17 +6,17 @@
 CPP_SRCS += \
 ../src/graphic/DrawCircle.cpp \
 ../src/graphic/DrawSquare.cpp \
-../src/graphic/Windows.cpp 
+../src/graphic/TaskBar.cpp 
 
 OBJS += \
 ./src/graphic/DrawCircle.o \
 ./src/graphic/DrawSquare.o \
-./src/graphic/Windows.o 
+./src/graphic/TaskBar.o 
 
 CPP_DEPS += \
 ./src/graphic/DrawCircle.d \
 ./src/graphic/DrawSquare.d \
-./src/graphic/Windows.d 
+./src/graphic/TaskBar.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

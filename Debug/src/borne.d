@@ -90,7 +90,8 @@ src/borne.d: ../src/borne.cpp /opt/vc/include/bcm_host.h \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/CTexture.h \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/CTextureQuad.h \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/CTexture.h \
- ../src/graphic/DrawSquare.h ../src/graphic/DrawCircle.h
+ ../src/graphic/DrawSquare.h ../src/graphic/DrawCircle.h \
+ ../src/graphic/TaskBar.h ../src/graphic/DrawSquare.h
 
 /opt/vc/include/bcm_host.h:
 
@@ -289,3 +290,7 @@ src/borne.d: ../src/borne.cpp /opt/vc/include/bcm_host.h \
 ../src/graphic/DrawSquare.h:
 
 ../src/graphic/DrawCircle.h:
+
+../src/graphic/TaskBar.h:
+
+../src/graphic/DrawSquare.h:

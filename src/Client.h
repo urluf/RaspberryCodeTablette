@@ -9,6 +9,7 @@
 #include <Utility/3D/CTextureQuad.h>
 #include "graphic/DrawSquare.h"
 #include "graphic/DrawCircle.h"
+#include "graphic/TaskBar.h"
 
 class Client : protected GlWindow
 {
@@ -25,7 +26,7 @@ private:
 		OpenUtility::CShaderProgram RenderingShader;
 		OpenUtility::CShaderFile ShaderVertex,ShaderFragment;
 	};
-	
+
 	struct SVertex
 	{
 		GLfloat position[3];
@@ -78,6 +79,7 @@ private:
 	//CTextureQuad *TexQuad;
 	DrawCircle *circle;
 	//DrawSquare *square;
+	TaskBar *taskBar;
 };
 
 #endif

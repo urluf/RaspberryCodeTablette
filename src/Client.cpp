@@ -8,7 +8,9 @@ Client::Client() :
 	Shaders(NULL),
 	//TexQuad(NULL)
 	//square(NULL)
-	circle(NULL)
+	circle(NULL),
+	taskBar(NULL)
+
 {
 }
 
@@ -46,14 +48,15 @@ void Client::Init()
 	// Data to visualize
 	//TexQuad=new CTextureQuad("../content/polytech.png",20,20);
 	//square =  new DrawSquare(8, 4);
-	circle = new DrawCircle(1);
+	circle = new DrawCircle(0.5);
+	taskBar = new TaskBar("../content/polytech.png",0.5,0.5, GetWidth(), 0.35);
 	GL_CHECK();
 
 	// Matrix operations
 	OpenUtility::CMat4x4<float> MVmatrix,Pmatrix,MVPmatrix;
 	float factor=1;
-
 //	MVmatrix*=OpenUtility::CMat4x4<float>().SetLookAt(0,2,3,0,0,0,0,1,0);
+	//Tmatrix*=OpenUtility::CMat4x4<float>().SetTranslate(1,-3, 0);
 	MVmatrix*=OpenUtility::CMat4x4<float>().SetLookAt(0,0,1,0,0,0,0,1,0);
 	Pmatrix.SetFrustum(-factor,factor,-factor*GetHeight()/float(GetWidth()),factor*GetHeight()/float(GetWidth()),0.1f,1000);
 	glUniformMatrix4fv(Shaders->RenderingShader["u_Nmatrix"],1,GL_FALSE,MVmatrix.GetMatrix());
@@ -71,6 +74,7 @@ void Client::Uninit()
 //	delete TexQuad;
 	delete circle;
 	//delete square;
+    delete taskBar;
 	glDeleteBuffers(1,&VBOtex);
 	glDeleteBuffers(1,&VBOindex);
 }
@@ -95,11 +99,27 @@ void Client::Render()
 	//glActiveTexture(GL_TEXTURE0);
 	//glUniform1i(Shaders->RenderingShader["u_texId"],0);
 	//TexQuad->AttachAttribToData(Shaders->RenderingShader["vPos"],Shaders->RenderingShader["vNorm"],Shaders->RenderingShader["vTexCoord"]);
-	circle->AttachAttribToData(Shaders->RenderingShader["vPos"], Shaders->RenderingShader["vNorm"]);
-	for (int i=0;i<1;i++)
+
+
+
+
+	OpenUtility::CMat4x4<float> Tmatrix, T1matrix;
+	for (int i=0;i<1;i++){
+		taskBar->AttachAttribToData(Shaders->RenderingShader["vPos"], Shaders->RenderingShader["vNorm"]);
+		Tmatrix*=OpenUtility::CMat4x4<float>().SetTranslate(1,-3, 0);
+		glUniformMatrix4fv(Shaders->RenderingShader["u_trans"],1,GL_FALSE, (Tmatrix.GetMatrix()));
+		GL_CHECK();
+		taskBar->Draw();
+		GL_CHECK();
+		circle->AttachAttribToData(Shaders->RenderingShader["vPos"], Shaders->RenderingShader["vNorm"]);
+		T1matrix*=OpenUtility::CMat4x4<float>().SetTranslate(1,2,0);
+		glUniformMatrix4fv(Shaders->RenderingShader["u_trans"],1,GL_FALSE, (T1matrix.GetMatrix()));
 		circle->Draw();
+		GL_CHECK();
+
+	}
 		//TexQuad->Draw();
-	GL_CHECK();
+
 }
 
 timespec Client::DiffTime(timespec start,timespec end)
