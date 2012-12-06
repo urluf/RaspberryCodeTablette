@@ -8,7 +8,9 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
+-include src/model/subdir.mk
 -include src/graphic/subdir.mk
+-include src/controller/subdir.mk
 -include src/OpenUtility/Utility/Stream/subdir.mk
 -include src/OpenUtility/Utility/Parallelism/subdir.mk
 -include src/OpenUtility/Utility/Network/subdir.mk

@@ -6,16 +6,19 @@
 CPP_SRCS += \
 ../src/Client.cpp \
 ../src/GlWindow.cpp \
+../src/Observable.cpp \
 ../src/borne.cpp 
 
 OBJS += \
 ./src/Client.o \
 ./src/GlWindow.o \
+./src/Observable.o \
 ./src/borne.o 
 
 CPP_DEPS += \
 ./src/Client.d \
 ./src/GlWindow.d \
+./src/Observable.d \
 ./src/borne.d 
 
 

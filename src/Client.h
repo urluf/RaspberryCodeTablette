@@ -10,22 +10,12 @@
 #include "graphic/DrawSquare.h"
 #include "graphic/DrawCircle.h"
 #include "graphic/TaskBar.h"
+#include "SShaders.h"
+#include "controller/ControllerMain.h"
 
 class Client : protected GlWindow
 {
 private:
-	struct SShaders
-	{
-		SShaders() :
-			ShaderVertex(OpenUtility::CShaderFile::EVertexShader,"vertex shader"),
-			ShaderFragment(OpenUtility::CShaderFile::EFragmentShader,"fragment shader")
-		{
-			RenderingShader.AddShaderFile(&ShaderVertex);
-			RenderingShader.AddShaderFile(&ShaderFragment);
-		}
-		OpenUtility::CShaderProgram RenderingShader;
-		OpenUtility::CShaderFile ShaderVertex,ShaderFragment;
-	};
 
 	struct SVertex
 	{
@@ -76,6 +66,7 @@ private:
 	GLuint VBOtex;
 	unsigned int nbIndexes;
 	SShaders *Shaders;
+	ControllerMain *cMain;
 	//CTextureQuad *TexQuad;
 	DrawCircle *circle;
 	//DrawSquare *square;

@@ -23,7 +23,9 @@ C_UPPER_DEPS :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
+src/model \
 src/graphic \
+src/controller \
 src \
 src/OpenUtility/Utility/Stream \
 src/OpenUtility/Utility/Parallelism \

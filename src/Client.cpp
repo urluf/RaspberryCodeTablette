@@ -27,7 +27,8 @@ void Client::Start()
 void Client::Init()
 {
 //	clock_gettime(CLOCK_MONOTONIC,&_debTime);
-
+	double height = static_cast<double>(GetHeight());
+	double width = static_cast<double>(GetWidth());
 	Shaders=new SShaders;
 	if (!Shaders->ShaderVertex.LoadFile("../shader/rendering.vert"))
 		std::cout << "-----------------------------------\nErreur vertex shader :\n" << Shaders->ShaderVertex.GetLog() << std::endl << "--------------------------" << std::endl;
@@ -49,7 +50,9 @@ void Client::Init()
 	//TexQuad=new CTextureQuad("../content/polytech.png",20,20);
 	//square =  new DrawSquare(8, 4);
 	circle = new DrawCircle(0.5);
-	taskBar = new TaskBar("../content/polytech.png",0.5,0.5, GetWidth(), 0.35);
+
+	cMain = new ControllerMain(width, height, "../content/polytech.png", 0.5,0.5, Shaders);
+
 	GL_CHECK();
 
 	// Matrix operations
@@ -74,7 +77,7 @@ void Client::Uninit()
 //	delete TexQuad;
 	delete circle;
 	//delete square;
-    delete taskBar;
+    delete cMain;
 	glDeleteBuffers(1,&VBOtex);
 	glDeleteBuffers(1,&VBOindex);
 }
@@ -105,11 +108,7 @@ void Client::Render()
 
 	OpenUtility::CMat4x4<float> Tmatrix, T1matrix;
 	for (int i=0;i<1;i++){
-		taskBar->AttachAttribToData(Shaders->RenderingShader["vPos"], Shaders->RenderingShader["vNorm"]);
-		Tmatrix*=OpenUtility::CMat4x4<float>().SetTranslate(1,-3, 0);
-		glUniformMatrix4fv(Shaders->RenderingShader["u_trans"],1,GL_FALSE, (Tmatrix.GetMatrix()));
-		GL_CHECK();
-		taskBar->Draw();
+		cMain->display();
 		GL_CHECK();
 		circle->AttachAttribToData(Shaders->RenderingShader["vPos"], Shaders->RenderingShader["vNorm"]);
 		T1matrix*=OpenUtility::CMat4x4<float>().SetTranslate(1,2,0);
