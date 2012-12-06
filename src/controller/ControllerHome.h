@@ -6,6 +6,7 @@
 #include "ControllerGeneral.h"
 #include "../model/mButton.h"
 #include "../graphic/WindowHome.h"
+#include "../EnumTypeButton.h"
 
 using namespace std;
 
@@ -14,10 +15,12 @@ class ControllerHome : public ControllerGeneral{
 public:
 	ControllerHome(double width, double height, const char * logo, double maxW,double maxH, SShaders* Shaders );
 	~ControllerHome();
-	void createButtons();
+
 	virtual void display();
 	virtual void setDisplay(double x, double y);
 
+private:
+	void createButtons();
 };
 #endif
 

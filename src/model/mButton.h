@@ -10,14 +10,12 @@
 
 #include<string>
 #include <Template/CMat4x4.h>
+#include "../EnumTypeButton.h"
 
 using namespace std;
 
 class mButton{
-enum typeButton{
-	CIRCLE,
-	SQUARE
-};
+
 
 private:
 	string title;
@@ -26,8 +24,12 @@ private:
 	typeButton typeB;
 
 public:
-	mButton(string title, const char* icone, OpenUtility::CMat4x4<float> transMatrix, typeButton typeB);
+	mButton(string title, const char* icone, OpenUtility::CMat4x4<float> &transMatrix, typeButton typeB);
 	~mButton();
+	string getTitle();
+	const char* getIcone();
+	OpenUtility::CMat4x4<float> getTransMatrix();
+	typeButton getTypeButton();
 
 };
 
