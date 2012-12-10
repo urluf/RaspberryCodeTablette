@@ -20,9 +20,11 @@ class Window{
 
 
 protected:
+	OpenUtility::CMat4x4<float> Pmatrix;
 	TaskBar *taskBar;
 	SShaders *Shaders;
 	list<mButton*>	*lButtons;
+	float Height;
 
 public:
 Window(double width, double height, const char * logo, double maxW,double maxH, list<mButton*>* lButtons, SShaders *Shaders);

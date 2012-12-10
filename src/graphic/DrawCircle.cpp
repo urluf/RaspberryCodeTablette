@@ -1,5 +1,5 @@
 #include "DrawCircle.h"
-#include <math.h>
+
 
 DrawCircle::DrawCircle(double radius){
 	this->radius = radius;
@@ -20,6 +20,7 @@ DrawCircle::DrawCircle(double radius){
 
 void DrawCircle::Draw(){
 	glDrawArrays(GL_TRIANGLE_FAN, 0, 360);
+	glBindBuffer(GL_ARRAY_BUFFER,0);
 }
 
 void DrawCircle::AttachAttribToData(GLuint vPos, GLuint vNorm){

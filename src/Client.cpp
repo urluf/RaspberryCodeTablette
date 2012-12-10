@@ -51,21 +51,10 @@ void Client::Init()
 	//square =  new DrawSquare(8, 4);
 	circle = new DrawCircle(0.5);
 
-	cMain = new ControllerMain(width, height, "../content/polytech.png", 0.5,0.5, Shaders);
 
 	GL_CHECK();
 
-	// Matrix operations
-	OpenUtility::CMat4x4<float> MVmatrix,Pmatrix,MVPmatrix;
-	float factor=1;
-//	MVmatrix*=OpenUtility::CMat4x4<float>().SetLookAt(0,2,3,0,0,0,0,1,0);
-	//Tmatrix*=OpenUtility::CMat4x4<float>().SetTranslate(1,-3, 0);
-	MVmatrix*=OpenUtility::CMat4x4<float>().SetLookAt(0,0,1,0,0,0,0,1,0);
-	Pmatrix.SetFrustum(-factor,factor,-factor*GetHeight()/float(GetWidth()),factor*GetHeight()/float(GetWidth()),0.1f,1000);
-	glUniformMatrix4fv(Shaders->RenderingShader["u_Nmatrix"],1,GL_FALSE,MVmatrix.GetMatrix());
-	GL_CHECK();
-	glUniformMatrix4fv(Shaders->RenderingShader["u_MVPmatrix"],1,GL_FALSE,(Pmatrix*MVmatrix).GetMatrix());
-	GL_CHECK();
+	cMain = new ControllerMain(GetWidth(),GetHeight(),"../content/polytech.png", 0.5,0.5, Shaders);
 
 	//cadre de la fenêtre utilisé pour l'affichage
 	glViewport(0,0,GetWidth(),GetHeight());
@@ -96,7 +85,7 @@ void Client::PreRender()
 
 void Client::Render()
 {
-	glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
+	glClearColor(0.0f, 0.0f, 0.0f, 0.5f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	//glActiveTexture(GL_TEXTURE0);
@@ -110,11 +99,11 @@ void Client::Render()
 	for (int i=0;i<1;i++){
 		cMain->display();
 		GL_CHECK();
-		circle->AttachAttribToData(Shaders->RenderingShader["vPos"], Shaders->RenderingShader["vNorm"]);
+/*		circle->AttachAttribToData(Shaders->RenderingShader["vPos"], Shaders->RenderingShader["vNorm"]);
 		T1matrix*=OpenUtility::CMat4x4<float>().SetTranslate(1,2,0);
 		glUniformMatrix4fv(Shaders->RenderingShader["u_trans"],1,GL_FALSE, (T1matrix.GetMatrix()));
 		circle->Draw();
-		GL_CHECK();
+		GL_CHECK();*/
 
 	}
 		//TexQuad->Draw();

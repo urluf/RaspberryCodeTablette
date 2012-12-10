@@ -32,6 +32,7 @@ void DrawSquare::AttachAttribToData(GLuint vPos, GLuint vNorm){
 
 void DrawSquare::Draw(){
 	glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
+	glBindBuffer(GL_ARRAY_BUFFER,0);
 }
 
 void DrawSquare::SetVertex(vertexSquare &vertex, double posX, double posY){
@@ -40,7 +41,7 @@ void DrawSquare::SetVertex(vertexSquare &vertex, double posX, double posY){
 	vertex.position[2] = 0;
 	vertex.normal[0]=0;
 	vertex.normal[1]=0;
-	vertex.normal[2]=0;
+	vertex.normal[2]=1;
 }
 
 
