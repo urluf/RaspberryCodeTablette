@@ -6,11 +6,17 @@
  */
 #include "mButton.h"
 
+int mButton::nb_button_square = 0;
+
 mButton::mButton(string title, const char* icone, OpenUtility::CMat4x4<float> &transMatrix, typeButton typeB){
 	this->title = title;
 	this->icone = icone;
 	this->transMatrix *= transMatrix;
 	this->typeB = typeB;
+
+	if(this->typeB == SQUARE){
+		this->nb_button_square++;
+	}
 }
 
 string mButton::getTitle(){
@@ -28,7 +34,6 @@ typeButton mButton::getTypeButton(){
 OpenUtility::CMat4x4<float> mButton::getTransMatrix(){
 	return this->transMatrix;
 }
-
 
 
 

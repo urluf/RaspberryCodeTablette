@@ -18,6 +18,7 @@ class mButton{
 
 
 private:
+	static int nb_button_square;
 	string title;
 	const char* icone;
 	OpenUtility::CMat4x4<float> transMatrix;
@@ -30,6 +31,7 @@ public:
 	const char* getIcone();
 	OpenUtility::CMat4x4<float> getTransMatrix();
 	typeButton getTypeButton();
+	static int getNbButton(){return nb_button_square;};
 
 };
 

@@ -42,6 +42,7 @@ void DrawSquare::SetVertex(vertexSquare &vertex, double posX, double posY){
 	vertex.normal[0]=0;
 	vertex.normal[1]=0;
 	vertex.normal[2]=1;
+
 }
 
 

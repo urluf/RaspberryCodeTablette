@@ -24,7 +24,7 @@ protected:
 	TaskBar *taskBar;
 	SShaders *Shaders;
 	list<mButton*>	*lButtons;
-	float Height;
+	float Height, Width;
 
 public:
 Window(double width, double height, const char * logo, double maxW,double maxH, list<mButton*>* lButtons, SShaders *Shaders);

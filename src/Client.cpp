@@ -132,7 +132,7 @@ void Client::OnKeyDown(unsigned int id,int keyCode)
 
 void Client::OnPeripheralAdd(unsigned int id,const char *name,EPeriphType type)
 {
-	std::cout << "Nouveau périphérique (id=" << id << " type=" << GlWindow::GetPeripheralTypeName(type) << ") : " << name << std::endl;
+//	std::cout << "Nouveau périphérique (id=" << id << " type=" << GlWindow::GetPeripheralTypeName(type) << ") : " << name << std::endl;
 }
 
 void Client::OnPeripheralRemove(unsigned int id,const char *name)
