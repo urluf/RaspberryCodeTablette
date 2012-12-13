@@ -16,7 +16,6 @@ Model* ControllerGeneral::getModel(){
 
 ControllerGeneral::~ControllerGeneral(){
 	delete model;
-	delete lButtons;
 	delete window;
 }
 

@@ -8,7 +8,7 @@
 class Model : protected Observable{
 
 
-protected:
+public:
 	typedef enum ePage{
 		EVNMT,
 		PLAN,
@@ -19,6 +19,8 @@ protected:
 		HOME
 	}Page;
 
+
+protected:
 	int numPage;
 	Page currentPage;
 
@@ -30,6 +32,7 @@ protected:
 
 public:
 	Model();
+	Model(Page page);
 	~Model();
 	string getCurrentPage();
 	int getNumPage();

@@ -2,14 +2,12 @@
 #include "Client.h"
 #include <iostream>
 #include <Template/CMat4x4.h>
+#include <unistd.h>
 
 Client::Client() :
 	nbIndexes(0),
 	Shaders(NULL),
-	//TexQuad(NULL)
-	//square(NULL)
-	circle(NULL),
-	taskBar(NULL)
+	cMain(NULL)
 
 {
 }
@@ -49,10 +47,6 @@ void Client::Init()
 	// Data to visualize
 	//TexQuad=new CTextureQuad("../content/polytech.png",20,20);
 	//square =  new DrawSquare(8, 4);
-	circle = new DrawCircle(0.5);
-
-
-	GL_CHECK();
 
 	cMain = new ControllerMain(GetWidth(),GetHeight(),"../content/polytech.png", 0.5,0.5, Shaders);
 
@@ -64,7 +58,6 @@ void Client::Init()
 void Client::Uninit()
 {
 //	delete TexQuad;
-	delete circle;
 	//delete square;
     delete cMain;
 	glDeleteBuffers(1,&VBOtex);
@@ -97,6 +90,9 @@ void Client::Render()
 
 	OpenUtility::CMat4x4<float> Tmatrix, T1matrix;
 	for (int i=0;i<1;i++){
+		cMain->display();
+		GL_CHECK();
+		cMain->setDisplay();
 		cMain->display();
 		GL_CHECK();
 /*		circle->AttachAttribToData(Shaders->RenderingShader["vPos"], Shaders->RenderingShader["vNorm"]);

@@ -2,19 +2,20 @@
 
 ControllerHome::ControllerHome(double width, double height, const char * logo, double maxW,double maxH, SShaders *Shaders) : ControllerGeneral(width, height, logo, maxW, maxH, Shaders){
 	this->model = new Model();
-	this->lButtons = new list<mButton*>();
+	mButton::reInitNbButton_Square();//met le nombre de boutons carré à zéro car la varible est de type static et que plusieurs controleurs vont l'utiliser
 	createButtons();
-	this->window = new WindowHome(width, height, logo, maxW, maxH, lButtons, Shaders);
-	this->display();
+	this->nbButtonSquare = mButton::getNbButton();
+	this->window = new Window(width, height, logo, maxW, maxH, lButtons, Shaders, nbButtonSquare);
 }
 
+//à cleaner!!
 void ControllerHome::createButtons(){
-	this->lButtons->push_back(new mButton("Personnel","", OpenUtility::CMat4x4<float>().SetTranslate(1,2,0), SQUARE ));
-	this->lButtons->push_back(new mButton("Plan","", OpenUtility::CMat4x4<float>().SetTranslate(2,2,0), SQUARE));
-	this->lButtons->push_back(new mButton("Evenements", "",OpenUtility::CMat4x4<float>().SetTranslate(3,2,0), SQUARE));
-	this->lButtons->push_back(new mButton("Emploi du temps", "", OpenUtility::CMat4x4<float>().SetTranslate(1,1,0), SQUARE));
-	this->lButtons->push_back(new mButton("Transports", "", OpenUtility::CMat4x4<float>().SetTranslate(1,3,0), SQUARE));
-	this->lButtons->push_back(new mButton("Organigramme","", OpenUtility::CMat4x4<float>().SetTranslate(3,1,0), SQUARE));
+	this->lButtons.push_back(new mButton("Personnel","", OpenUtility::CMat4x4<float>().SetTranslate(1,2,0), SQUARE ));
+	this->lButtons.push_back(new mButton("Plan","", OpenUtility::CMat4x4<float>().SetTranslate(2,2,0), SQUARE));
+	this->lButtons.push_back(new mButton("Evenements", "",OpenUtility::CMat4x4<float>().SetTranslate(3,2,0), SQUARE));
+	this->lButtons.push_back(new mButton("Emploi du temps", "", OpenUtility::CMat4x4<float>().SetTranslate(1,1,0), SQUARE));
+	this->lButtons.push_back(new mButton("Transports", "", OpenUtility::CMat4x4<float>().SetTranslate(1,3,0), SQUARE));
+	this->lButtons.push_back(new mButton("Organigramme","", OpenUtility::CMat4x4<float>().SetTranslate(3,1,0), SQUARE));
 }
 
 void ControllerHome::display(){
@@ -49,4 +50,5 @@ void ControllerHome::setDisplay(double x, double y){
 
 ControllerHome::~ControllerHome(){
 	delete this->window;
+	delete this->model;
 }

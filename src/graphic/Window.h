@@ -12,7 +12,8 @@
 #include "../EnumTypeButton.h"
 #include "DrawCircle.h"
 #include "DrawSquare.h"
-
+#include <Template/CMat4x4.h>
+#include <GLES2/gl2.h>
 
 using namespace std;
 
@@ -23,14 +24,15 @@ protected:
 	OpenUtility::CMat4x4<float> Pmatrix;
 	TaskBar *taskBar;
 	SShaders *Shaders;
-	list<mButton*>	*lButtons;
+	list<mButton*>	lButtons;
 	float Height, Width;
+	int nbButtonSquare;
 
 public:
-Window(double width, double height, const char * logo, double maxW,double maxH, list<mButton*>* lButtons, SShaders *Shaders);
-virtual ~Window() = 0;
+Window(double width, double height, const char * logo, double maxW,double maxH, list<mButton*> lButtons, SShaders *Shaders, int nbButtonSquare);
+~Window();
 TaskBar* getTaskBar();
-virtual void display();
+void display();
 
 };
 

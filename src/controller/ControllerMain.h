@@ -4,6 +4,7 @@
 #include<iostream>
 #include "ControllerGeneral.h"
 #include "ControllerHome.h"
+#include "ControllerTransport.h"
 #include "../GlWindow.h"
 #include "../SShaders.h"
 
@@ -11,11 +12,15 @@
 class ControllerMain{
 private:
 	ControllerGeneral *currentController;
+	ControllerTransport *controllerTransport;
+	ControllerHome *controllerHome;
 	Model *modelCurrentController;
+
 public:
 	ControllerMain(double width, double height, const char * logo, double maxW,double maxH, SShaders *Shaders);
 	~ControllerMain();
 	void display();
+	void setDisplay();
 };
 #endif
 

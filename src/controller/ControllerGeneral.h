@@ -8,16 +8,20 @@
 #include <list>
 #include "../GlWindow.h"
 #include "../SShaders.h"
+#include "../model/mButton.h"
+#include "../graphic/Window.h"
+#include "../EnumTypeButton.h"
 
 class ControllerGeneral{
 
 protected:
 	Window *window;
 	Model *model;
-	list<mButton*> *lButtons;
+	list<mButton*> lButtons;
 	double width, height, maxW, maxH;
 	const char * logo;
 	SShaders *Shaders;
+	int nbButtonSquare;
 public:
 	virtual void display() = 0;
 	virtual void setDisplay(double x, double y) = 0; //x, y sont les coordonnées de l'endroit de l'écran où l'on vient d'appuyer

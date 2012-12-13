@@ -68,9 +68,6 @@ private:
 	SShaders *Shaders;
 	ControllerMain *cMain;
 	//CTextureQuad *TexQuad;
-	DrawCircle *circle;
-	//DrawSquare *square;
-	TaskBar *taskBar;
 };
 
 #endif

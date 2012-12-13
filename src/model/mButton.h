@@ -32,6 +32,7 @@ public:
 	OpenUtility::CMat4x4<float> getTransMatrix();
 	typeButton getTypeButton();
 	static int getNbButton(){return nb_button_square;};
+	static void reInitNbButton_Square(){nb_button_square = 0;}
 
 };
 

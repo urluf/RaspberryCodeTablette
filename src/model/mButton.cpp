@@ -15,7 +15,7 @@ mButton::mButton(string title, const char* icone, OpenUtility::CMat4x4<float> &t
 	this->typeB = typeB;
 
 	if(this->typeB == SQUARE){
-		this->nb_button_square++;
+		mButton::nb_button_square++;
 	}
 }
 

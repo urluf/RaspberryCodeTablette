@@ -111,10 +111,9 @@ src/Client.d: ../src/Client.cpp ../src/Client.h ../src/GlWindow.h \
  ../src/controller/../model/../Observer.h \
  ../src/controller/../model/../Observable.h \
  ../src/controller/../GlWindow.h ../src/controller/../SShaders.h \
- ../src/controller/ControllerHome.h ../src/controller/../model/mButton.h \
- ../src/controller/../graphic/WindowHome.h \
- ../src/controller/../graphic/Window.h \
- ../src/controller/../EnumTypeButton.h
+ ../src/controller/../model/mButton.h \
+ ../src/controller/../EnumTypeButton.h ../src/controller/ControllerHome.h \
+ ../src/controller/ControllerTransport.h
 
 ../src/Client.h:
 
@@ -360,12 +359,10 @@ src/Client.d: ../src/Client.cpp ../src/Client.h ../src/GlWindow.h \
 
 ../src/controller/../SShaders.h:
 
-../src/controller/ControllerHome.h:
-
 ../src/controller/../model/mButton.h:
 
-../src/controller/../graphic/WindowHome.h:
-
-../src/controller/../graphic/Window.h:
-
 ../src/controller/../EnumTypeButton.h:
+
+../src/controller/ControllerHome.h:
+
+../src/controller/ControllerTransport.h:

@@ -108,7 +108,8 @@ src/controller/ControllerGeneral.d: \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/Res/CTable.cxx \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/Res/../../Utility/Memory.h \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/CListe.h \
- ../src/controller/../SShaders.h
+ ../src/controller/../SShaders.h ../src/controller/../model/mButton.h \
+ ../src/controller/../EnumTypeButton.h
 
 ../src/controller/ControllerGeneral.h:
 
@@ -335,3 +336,7 @@ src/controller/ControllerGeneral.d: \
 /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/CListe.h:
 
 ../src/controller/../SShaders.h:
+
+../src/controller/../model/mButton.h:
+
+../src/controller/../EnumTypeButton.h:

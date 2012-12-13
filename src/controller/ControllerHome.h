@@ -1,19 +1,14 @@
 #ifndef _CHOME_H
 	#define _CHOME_H
 
-#include<iostream>
-#include<list>
 #include "ControllerGeneral.h"
-#include "../model/mButton.h"
-#include "../graphic/WindowHome.h"
-#include "../EnumTypeButton.h"
 
 using namespace std;
 
 class ControllerHome : public ControllerGeneral{
 
 public:
-	ControllerHome(double width, double height, const char * logo, double maxW,double maxH, SShaders* Shaders );
+	ControllerHome(double width, double height, const char * logo, double maxW,double maxH, SShaders* Shaders);
 	~ControllerHome();
 
 	virtual void display();

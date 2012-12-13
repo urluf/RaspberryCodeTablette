@@ -1,9 +1,40 @@
 #include "Model.h"
-
+#include "mButton.h"
 
 Model::Model(){
 	this->numPage = 1;
 	this->currentPage = HOME;
+}
+
+Model::Model(Page page){
+	this->numPage =1;
+	switch(page){
+
+	case HOME:
+		this->currentPage = HOME;
+		break;
+	case EVNMT:
+		this->currentPage = EVNMT;
+		break;
+	case PLAN:
+		this->currentPage = PLAN;
+		break;
+	case EDT:
+		this->currentPage = EDT;
+		break;
+	case PERSO:
+		this->currentPage = PERSO;
+		break;
+	case TRANSPORT:
+		this->currentPage = TRANSPORT;
+		break;
+	case ORGA:
+		this->currentPage = ORGA;
+		break;
+	default:
+		this->currentPage = HOME;
+		break;
+	}
 }
 
 void Model::pageSuivante(){

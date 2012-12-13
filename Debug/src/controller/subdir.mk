@@ -6,17 +6,20 @@
 CPP_SRCS += \
 ../src/controller/ControllerGeneral.cpp \
 ../src/controller/ControllerHome.cpp \
-../src/controller/ControllerMain.cpp 
+../src/controller/ControllerMain.cpp \
+../src/controller/ControllerTransport.cpp 
 
 OBJS += \
 ./src/controller/ControllerGeneral.o \
 ./src/controller/ControllerHome.o \
-./src/controller/ControllerMain.o 
+./src/controller/ControllerMain.o \
+./src/controller/ControllerTransport.o 
 
 CPP_DEPS += \
 ./src/controller/ControllerGeneral.d \
 ./src/controller/ControllerHome.d \
-./src/controller/ControllerMain.d 
+./src/controller/ControllerMain.d \
+./src/controller/ControllerTransport.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
