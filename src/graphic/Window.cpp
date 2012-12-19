@@ -43,6 +43,7 @@ void Window::display(){
 		list<Coordonnee*> lCoord;
 		double pTailleWS = 0.2; // pourcentage de la taille que l'on utilisera pour dessiner nos Boutons rectangulaires
 		double pTailleHS = 0.1;
+		double ptailleR = 0.05;
 		/*Dans cette conditionnelle en fonction du nombre de boutons que l'on souhaite créer, on va 
  * 		enregister les translations à faire pour les boutons de formes carrés, suivi des coordonnées des points en pourcentages par rapport à l'écran par exemple xMin du carré est à 25% de la largeur total...*/
 		if(this->nbButtonSquare<=3){
@@ -91,10 +92,29 @@ void Window::display(){
 			}
 			case CIRCLE:
 			{
-				DrawCircle *circle = new DrawCircle(0.5);
+
+
+				DrawCircle *circle = new DrawCircle(Height*ptailleR);
 				circle->AttachAttribToData(Shaders->RenderingShader["vPos"], Shaders->RenderingShader["vNorm"]);
-				glUniformMatrix4fv(Shaders->RenderingShader["u_Nmatrix"],1,GL_FALSE,(MVmatrix).GetMatrix());
+
+				if((*it)->getTitle() == "Close"){
+					glUniformMatrix4fv(Shaders->RenderingShader["u_Nmatrix"],1,GL_FALSE,(MVmatrix*(Tmatrix.SetTranslate((Width/2)*0.9, (Height/2)*0.9, 0.9))).GetMatrix());
+					GL_CHECK();
+					glUniformMatrix4fv(Shaders->RenderingShader["u_MVPmatrix"],1,GL_FALSE,(MVPmatrix*(Tmatrix.SetTranslate((Width/2)*0.9, (Height/2)*0.9, 0.9))).GetMatrix());
+					GL_CHECK();
+					(*it)->setCoord(new Coordonnee((0.9-((Width*ptailleR)/Height)), (0.9+((Width*ptailleR)/Height)), 0.1-ptailleR, 0.1+ptailleR));
+				}
+				else{
+					glUniformMatrix4fv(Shaders->RenderingShader["u_Nmatrix"],1,GL_FALSE,(MVmatrix*(Tmatrix.SetTranslate(-(Width/2)*.9, (Height/2)*0.9, 0.9))).GetMatrix());
+					GL_CHECK();
+					glUniformMatrix4fv(Shaders->RenderingShader["u_MVPmatrix"],1,GL_FALSE,(MVPmatrix*(Tmatrix.SetTranslate(-(Width/2)*0.9, (Height/2)*0.9, 0.9))).GetMatrix());
+					GL_CHECK();
+					(*it)->setCoord(new Coordonnee((0.1-((Width*ptailleR)/Height)), (0.1+((Width*ptailleR)/Height)), 0.1-ptailleR, 0.1+ptailleR));
+				}
+
+				GL_CHECK();
 				circle->Draw();
+				itCoord++;
 				delete circle;
 				break;
 			}

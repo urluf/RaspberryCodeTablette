@@ -22,18 +22,19 @@ void  ControllerTransport::createButtons(){
 	this->lButtons.push_back(new mButton("Transport en commun","", OpenUtility::CMat4x4<float>().SetTranslate(1,2,0), SQUARE ));
 	this->lButtons.push_back(new mButton("Taxi", "",OpenUtility::CMat4x4<float>().SetTranslate(3,2,0), SQUARE));
 	this->lButtons.push_back(new mButton("Aéroport", "", OpenUtility::CMat4x4<float>().SetTranslate(1,1,0), SQUARE));
+	this->lButtons.push_back(new mButton("Close", "",OpenUtility::CMat4x4<float>().SetTranslate(1,1,0), CIRCLE ));
 }
 
 void ControllerTransport::display(){
 	this->window->display();
 }
 
-void ControllerTransport::setDisplay(double x, double y){
+string ControllerTransport::setDisplay(string titleButton){
 //doit changer l'affichage en fonction des touches sur lesquels on a appuyé
 }
 
-bool ControllerTransport::action(double x, double y){
-	return false;
+string ControllerTransport::action(double x, double y){
+	return "NULL";
 }
 
 ControllerTransport::~ControllerTransport(){

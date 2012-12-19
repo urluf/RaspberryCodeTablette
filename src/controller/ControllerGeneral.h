@@ -24,10 +24,10 @@ protected:
 	int nbButtonSquare;
 public:
 	virtual void display() = 0;
-	virtual void setDisplay(double x, double y) = 0; //x, y sont les coordonnées de l'endroit de l'écran où l'on vient d'appuyer
+	virtual string setDisplay(string titleButton) = 0; //x, y sont les coordonnées de l'endroit de l'écran où l'on vient d'appuyer
 	ControllerGeneral(double width, double height, const char * logo, double maxW,double maxH, SShaders *Shaders);
 	virtual void createButtons()=0;
-	virtual bool action(double x, double y)=0;
+	string action(double x, double y);
 	virtual ~ControllerGeneral();
 	Model* getModel();
 };

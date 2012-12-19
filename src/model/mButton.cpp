@@ -42,16 +42,14 @@ OpenUtility::CMat4x4<float> mButton::getTransMatrix(){
 	return this->transMatrix;
 }
 
-bool mButton::inTheButton(double x, double y){
-	printf("%f, %f, %f, %f\n", x, y, this->coord->getXMin(), this->coord->getXMax());
-	if(typeB == SQUARE){
-		if((x>=this->coord->getXMin())&&(x<=this->coord->getXMax())){
-			if((y>=this->coord->getYMin())&&(y<=this->coord->getYMax())){
-				return true;
-			}
+string mButton::inTheButton(double x, double y){
+	printf("%f, %f, %f, %f, %f, %f\n", x, y, this->coord->getXMin(), this->coord->getXMax(), this->coord->getYMin(), this->coord->getYMax());
+	if((x>=this->coord->getXMin())&&(x<=this->coord->getXMax())){
+		if((y>=this->coord->getYMin())&&(y<=this->coord->getYMax())){
+			return this->title;
 		}
 	}
-	return false;
+	return "NULL";
 }
 
 mButton::~mButton(){

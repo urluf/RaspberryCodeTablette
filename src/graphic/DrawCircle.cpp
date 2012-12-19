@@ -37,7 +37,7 @@ void DrawCircle::setVertex(vertexCircle &vertex, double posX, double posY){
 		vertex.position[2] = 0;
 		vertex.normal[0] = 0;
 		vertex.normal[1] = 0;
-		vertex.normal[2] = 0;
+		vertex.normal[2] = 1;
 }
 
 

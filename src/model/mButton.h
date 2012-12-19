@@ -34,7 +34,7 @@ public:
 	typeButton getTypeButton();
 	static int getNbButton(){return nb_button_square;};
 	static void reInitNbButton_Square(){nb_button_square = 0;}
-	bool inTheButton(double x, double y);
+	string inTheButton(double x, double y);
 	void setCoord(Coordonnee *coord);
 };
 

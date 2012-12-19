@@ -20,7 +20,7 @@ public:
 	ControllerMain(double width, double height, const char * logo, double maxW,double maxH, SShaders *Shaders);
 	~ControllerMain();
 	void display();
-	void setDisplay();
+	void setDisplay(string titleButton);
 	bool action(double x, double y);
 };
 #endif

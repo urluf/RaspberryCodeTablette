@@ -12,16 +12,26 @@ void ControllerMain::display(){
 }
 
 bool ControllerMain::action(double x, double y){
-	bool actionButton = this->currentController->action(x, y);
-	if(actionButton == true){
-		this->setDisplay();
+	string actionButton = this->currentController->action(x, y);
+	if(actionButton != "NULL"){
+		this->setDisplay(actionButton);
+		return true;
 	}
-	return actionButton;
+	return false;
 }
 
-void ControllerMain::setDisplay(){
-	this->currentController = controllerTransport;
-	this->modelCurrentController = this->currentController->getModel();
+void ControllerMain::setDisplay(string titleButton){
+	if(titleButton != "NULL"){
+		if(titleButton == "Close")
+		{
+			this->currentController = controllerHome;
+		}
+		else if((this->currentController->getModel()->getNumPage() == 1)&&(this->currentController->getModel()->getCurrentPage()=="home")){
+			if(titleButton ==  "Transports"){
+				this->currentController = controllerTransport;
+			}
+		}
+	}
 }
 
 ControllerMain::~ControllerMain(){

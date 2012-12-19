@@ -23,19 +23,8 @@ void ControllerHome::display(){
 	this->window->display();
 }
 
-void ControllerHome::setDisplay(double x, double y){
+string ControllerHome::setDisplay(string titleButton){
 	//doit changer l'affichage en fonctiond des touches sur lesquels on a appuyé
-}
-
-bool ControllerHome::action(double x, double y){
-	list<mButton*>::iterator it = lButtons.begin();
-	bool actionButton = false;
-
-	while((it!=lButtons.end())&&(actionButton == false)){
-		actionButton = (*it)->inTheButton(x/width, y/height);
-		it++;
-	}
-	return actionButton;
 }
 
 /*ControllerGeneral ControllerHome::setDisplay(double x, double y){
