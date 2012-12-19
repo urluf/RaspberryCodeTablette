@@ -34,11 +34,9 @@ src/OpenUtility/Utility \
 src/OpenUtility/Utility/Math \
 src/OpenUtility/Utility/Filesystem \
 src/OpenUtility/Utility/3D \
-obj/src \
 obj/src/OpenUtility/Utility/Stream \
 obj/src/OpenUtility/Utility/Parallelism \
 obj/src/OpenUtility/Utility/Network \
-obj/src/OpenUtility/Utility \
 obj/src/OpenUtility/Utility/Math \
 obj/src/OpenUtility/Utility/Filesystem \
 obj/src/OpenUtility/Utility/3D \

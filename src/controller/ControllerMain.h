@@ -21,6 +21,7 @@ public:
 	~ControllerMain();
 	void display();
 	void setDisplay();
+	bool action(double x, double y);
 };
 #endif
 

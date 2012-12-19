@@ -32,6 +32,10 @@ void ControllerTransport::setDisplay(double x, double y){
 //doit changer l'affichage en fonction des touches sur lesquels on a appuyé
 }
 
+bool ControllerTransport::action(double x, double y){
+	return false;
+}
+
 ControllerTransport::~ControllerTransport(){
 	delete this->window;
 }

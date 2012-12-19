@@ -68,6 +68,7 @@ private:
 	SShaders *Shaders;
 	ControllerMain *cMain;
 	//CTextureQuad *TexQuad;
+	int X,Y;
 };
 
 #endif

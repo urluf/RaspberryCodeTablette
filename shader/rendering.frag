@@ -18,4 +18,5 @@ void main()
 //	gl_FragColor = vec4(texColor.rgb * calcColor, texColor.a);
 	gl_FragColor = v_Color;
 //	gl_FragColor = texColor;
+
 }

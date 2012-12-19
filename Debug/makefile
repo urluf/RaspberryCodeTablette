@@ -25,8 +25,6 @@ RM := rm -rf
 -include obj/src/OpenUtility/Utility/Math/subdir.mk
 -include obj/src/OpenUtility/Utility/Filesystem/subdir.mk
 -include obj/src/OpenUtility/Utility/3D/subdir.mk
--include obj/src/OpenUtility/Utility/subdir.mk
--include obj/src/subdir.mk
 -include subdir.mk
 -include objects.mk
 

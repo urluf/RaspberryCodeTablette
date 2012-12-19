@@ -11,11 +11,11 @@
 #include<string>
 #include <Template/CMat4x4.h>
 #include "../EnumTypeButton.h"
+#include "Coordonnee.h"
 
 using namespace std;
 
 class mButton{
-
 
 private:
 	static int nb_button_square;
@@ -23,7 +23,8 @@ private:
 	const char* icone;
 	OpenUtility::CMat4x4<float> transMatrix;
 	typeButton typeB;
-
+	Coordonnee *coord;
+	
 public:
 	mButton(string title, const char* icone, OpenUtility::CMat4x4<float> &transMatrix, typeButton typeB);
 	~mButton();
@@ -33,7 +34,8 @@ public:
 	typeButton getTypeButton();
 	static int getNbButton(){return nb_button_square;};
 	static void reInitNbButton_Square(){nb_button_square = 0;}
-
+	bool inTheButton(double x, double y);
+	void setCoord(Coordonnee *coord);
 };
 
 

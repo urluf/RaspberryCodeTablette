@@ -11,6 +11,14 @@ void ControllerMain::display(){
 	this->currentController->display();
 }
 
+bool ControllerMain::action(double x, double y){
+	bool actionButton = this->currentController->action(x, y);
+	if(actionButton == true){
+		this->setDisplay();
+	}
+	return actionButton;
+}
+
 void ControllerMain::setDisplay(){
 	this->currentController = controllerTransport;
 	this->modelCurrentController = this->currentController->getModel();

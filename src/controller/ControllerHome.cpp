@@ -9,6 +9,7 @@ ControllerHome::ControllerHome(double width, double height, const char * logo, d
 }
 
 //à cleaner!!
+//créer une classe coordonnée dans laquelle on mettra les coordonnées des points calculés à l'aide des translations
 void ControllerHome::createButtons(){
 	this->lButtons.push_back(new mButton("Personnel","", OpenUtility::CMat4x4<float>().SetTranslate(1,2,0), SQUARE ));
 	this->lButtons.push_back(new mButton("Plan","", OpenUtility::CMat4x4<float>().SetTranslate(2,2,0), SQUARE));
@@ -24,6 +25,17 @@ void ControllerHome::display(){
 
 void ControllerHome::setDisplay(double x, double y){
 	//doit changer l'affichage en fonctiond des touches sur lesquels on a appuyé
+}
+
+bool ControllerHome::action(double x, double y){
+	list<mButton*>::iterator it = lButtons.begin();
+	bool actionButton = false;
+
+	while((it!=lButtons.end())&&(actionButton == false)){
+		actionButton = (*it)->inTheButton(x/width, y/height);
+		it++;
+	}
+	return actionButton;
 }
 
 /*ControllerGeneral ControllerHome::setDisplay(double x, double y){

@@ -27,6 +27,7 @@ public:
 	virtual void setDisplay(double x, double y) = 0; //x, y sont les coordonnées de l'endroit de l'écran où l'on vient d'appuyer
 	ControllerGeneral(double width, double height, const char * logo, double maxW,double maxH, SShaders *Shaders);
 	virtual void createButtons()=0;
+	virtual bool action(double x, double y)=0;
 	virtual ~ControllerGeneral();
 	Model* getModel();
 };

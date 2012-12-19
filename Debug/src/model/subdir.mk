@@ -4,14 +4,17 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../src/model/Coordonnee.cpp \
 ../src/model/Model.cpp \
 ../src/model/mButton.cpp 
 
 OBJS += \
+./src/model/Coordonnee.o \
 ./src/model/Model.o \
 ./src/model/mButton.o 
 
 CPP_DEPS += \
+./src/model/Coordonnee.d \
 ./src/model/Model.d \
 ./src/model/mButton.d 
 

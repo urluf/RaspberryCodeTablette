@@ -102,6 +102,7 @@ src/Client.d: ../src/Client.cpp ../src/Client.h ../src/GlWindow.h \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/Res/../../Utility/3D/3D.h \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/Res/../../Utility/3D/../Stream/Stream.h \
  ../src/controller/../graphic/../model/../EnumTypeButton.h \
+ ../src/controller/../graphic/../model/Coordonnee.h \
  ../src/controller/../graphic/../SShaders.h \
  ../src/controller/../graphic/../EnumTypeButton.h \
  ../src/controller/../graphic/DrawCircle.h \
@@ -338,6 +339,8 @@ src/Client.d: ../src/Client.cpp ../src/Client.h ../src/GlWindow.h \
 /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/Res/../../Utility/3D/../Stream/Stream.h:
 
 ../src/controller/../graphic/../model/../EnumTypeButton.h:
+
+../src/controller/../graphic/../model/Coordonnee.h:
 
 ../src/controller/../graphic/../SShaders.h:
 

@@ -13,6 +13,7 @@ public:
 
 	virtual void display();
 	virtual void setDisplay(double x, double y);
+	bool action(double x, double y);
 
 private:
 	void createButtons();

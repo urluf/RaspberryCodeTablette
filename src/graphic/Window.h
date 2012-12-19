@@ -19,7 +19,6 @@ using namespace std;
 
 class Window{
 
-
 protected:
 	OpenUtility::CMat4x4<float> Pmatrix;
 	TaskBar *taskBar;
