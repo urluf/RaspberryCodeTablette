@@ -11,12 +11,12 @@ ControllerHome::ControllerHome(double width, double height, const char * logo, d
 //à cleaner!!
 //créer une classe coordonnée dans laquelle on mettra les coordonnées des points calculés à l'aide des translations
 void ControllerHome::createButtons(){
-	this->lButtons.push_back(new mButton("Personnel","", OpenUtility::CMat4x4<float>().SetTranslate(1,2,0), SQUARE ));
-	this->lButtons.push_back(new mButton("Plan","", OpenUtility::CMat4x4<float>().SetTranslate(2,2,0), SQUARE));
-	this->lButtons.push_back(new mButton("Evenements", "",OpenUtility::CMat4x4<float>().SetTranslate(3,2,0), SQUARE));
-	this->lButtons.push_back(new mButton("Emploi du temps", "", OpenUtility::CMat4x4<float>().SetTranslate(1,1,0), SQUARE));
-	this->lButtons.push_back(new mButton("Transports", "", OpenUtility::CMat4x4<float>().SetTranslate(1,3,0), SQUARE));
-	this->lButtons.push_back(new mButton("Organigramme","", OpenUtility::CMat4x4<float>().SetTranslate(3,1,0), SQUARE));
+	this->lButtons.push_back(new mButton("Personnel","", SQUARE ));
+	this->lButtons.push_back(new mButton("Plan","", SQUARE));
+	this->lButtons.push_back(new mButton("Evenements", "", SQUARE));
+	this->lButtons.push_back(new mButton("Emploi du temps", "", SQUARE));
+	this->lButtons.push_back(new mButton("Transports", "", SQUARE));
+	this->lButtons.push_back(new mButton("Organigramme","", SQUARE));
 }
 
 void ControllerHome::display(){

@@ -26,7 +26,7 @@ private:
 	Coordonnee *coord;
 	
 public:
-	mButton(string title, const char* icone, OpenUtility::CMat4x4<float> &transMatrix, typeButton typeB);
+	mButton(string title, const char* icone, typeButton typeB);
 	~mButton();
 	string getTitle();
 	const char* getIcone();

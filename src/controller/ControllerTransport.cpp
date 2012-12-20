@@ -19,10 +19,10 @@ ControllerTransport::ControllerTransport(double width, double height, const char
 
 //à cleaner!!
 void  ControllerTransport::createButtons(){
-	this->lButtons.push_back(new mButton("Transport en commun","", OpenUtility::CMat4x4<float>().SetTranslate(1,2,0), SQUARE ));
-	this->lButtons.push_back(new mButton("Taxi", "",OpenUtility::CMat4x4<float>().SetTranslate(3,2,0), SQUARE));
-	this->lButtons.push_back(new mButton("Aéroport", "", OpenUtility::CMat4x4<float>().SetTranslate(1,1,0), SQUARE));
-	this->lButtons.push_back(new mButton("Close", "",OpenUtility::CMat4x4<float>().SetTranslate(1,1,0), CIRCLE ));
+	this->lButtons.push_back(new mButton("Transport en commun","",SQUARE ));
+	this->lButtons.push_back(new mButton("Taxi", "", SQUARE));
+	this->lButtons.push_back(new mButton("Aéroport", "", SQUARE));
+	this->lButtons.push_back(new mButton("Close", "", CIRCLE ));
 }
 
 void ControllerTransport::display(){

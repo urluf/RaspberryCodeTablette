@@ -8,7 +8,7 @@
 
 int mButton::nb_button_square = 0;
 
-mButton::mButton(string title, const char* icone, OpenUtility::CMat4x4<float> &transMatrix, typeButton typeB){
+mButton::mButton(string title, const char* icone, typeButton typeB){
 	this->title = title;
 	this->icone = icone;
 	this->typeB = typeB;
@@ -43,7 +43,7 @@ OpenUtility::CMat4x4<float> mButton::getTransMatrix(){
 }
 
 string mButton::inTheButton(double x, double y){
-	printf("%f, %f, %f, %f, %f, %f\n", x, y, this->coord->getXMin(), this->coord->getXMax(), this->coord->getYMin(), this->coord->getYMax());
+	//printf("%f, %f, %f, %f, %f, %f\n", x, y, this->coord->getXMin(), this->coord->getXMax(), this->coord->getYMin(), this->coord->getYMax());
 	if((x>=this->coord->getXMin())&&(x<=this->coord->getXMax())){
 		if((y>=this->coord->getYMin())&&(y<=this->coord->getYMax())){
 			return this->title;
