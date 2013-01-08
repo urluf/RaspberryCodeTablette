@@ -1,30 +1,13 @@
 #include "ControllerHome.h"
 
-ControllerHome::ControllerHome(double width, double height, const char * logo, double maxW,double maxH, SShaders *Shaders) : ControllerGeneral(width, height, logo, maxW, maxH, Shaders){
+ControllerHome::ControllerHome(double width, double height) : ControllerGeneral(width, height){
 	this->model = new Model();
-	mButton::reInitNbButton_Square();//met le nombre de boutons carré à zéro car la varible est de type static et que plusieurs controleurs vont l'utiliser
-	createButtons();
-	this->nbButtonSquare = mButton::getNbButton();
-	this->window = new Window(width, height, logo, maxW, maxH, lButtons, Shaders, nbButtonSquare);
-}
-
-//à cleaner!!
-//créer une classe coordonnée dans laquelle on mettra les coordonnées des points calculés à l'aide des translations
-void ControllerHome::createButtons(){
-	this->lButtons.push_back(new mButton("Personnel","", SQUARE ));
-	this->lButtons.push_back(new mButton("Plan","", SQUARE));
-	this->lButtons.push_back(new mButton("Evenements", "", SQUARE));
-	this->lButtons.push_back(new mButton("Emploi du temps", "", SQUARE));
-	this->lButtons.push_back(new mButton("Transports", "", SQUARE));
-	this->lButtons.push_back(new mButton("Organigramme","", SQUARE));
-}
-
-void ControllerHome::display(){
-	this->window->display();
+	this->layout = new LayoutHome();
 }
 
 string ControllerHome::setDisplay(string titleButton){
 	//doit changer l'affichage en fonctiond des touches sur lesquels on a appuyé
+	return "";
 }
 
 /*ControllerGeneral ControllerHome::setDisplay(double x, double y){
@@ -50,6 +33,4 @@ string ControllerHome::setDisplay(string titleButton){
 }*/
 
 ControllerHome::~ControllerHome(){
-	delete this->window;
-	delete this->model;
 }

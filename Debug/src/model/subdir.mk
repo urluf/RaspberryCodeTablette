@@ -6,17 +6,20 @@
 CPP_SRCS += \
 ../src/model/Coordonnee.cpp \
 ../src/model/Model.cpp \
-../src/model/mButton.cpp 
+../src/model/mButton.cpp \
+../src/model/modelTan.cpp 
 
 OBJS += \
 ./src/model/Coordonnee.o \
 ./src/model/Model.o \
-./src/model/mButton.o 
+./src/model/mButton.o \
+./src/model/modelTan.o 
 
 CPP_DEPS += \
 ./src/model/Coordonnee.d \
 ./src/model/Model.d \
-./src/model/mButton.d 
+./src/model/mButton.d \
+./src/model/modelTan.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

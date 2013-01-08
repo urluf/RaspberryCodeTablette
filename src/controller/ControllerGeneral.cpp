@@ -1,13 +1,12 @@
 #include "ControllerGeneral.h"
 #include <iostream>
 using namespace std;
-ControllerGeneral::ControllerGeneral(double width, double height, const char * logo, double maxW,double maxH, SShaders *Shaders){
+
+
+
+ControllerGeneral::ControllerGeneral(double width, double height){
 	this->width = width;
 	this->height=height;
-	this->logo=logo;
-	this->maxW=maxW;
-	this->maxH=maxH;
-	this->Shaders = Shaders;
 }
 
 
@@ -15,7 +14,13 @@ Model* ControllerGeneral::getModel(){
 	return this->model;
 }
 
+Layout* ControllerGeneral::getLayout(){
+	return this->layout;
+}
+
 string ControllerGeneral::action(double x, double y){
+	list<mButton*> lButtons = this->layout->getButtons();
+
 	list<mButton*>::iterator it = lButtons.begin();
 	string actionButton = "NULL";
 
@@ -29,7 +34,7 @@ string ControllerGeneral::action(double x, double y){
 
 ControllerGeneral::~ControllerGeneral(){
 	delete model;
-	delete window;
+	delete layout;
 }
 
 

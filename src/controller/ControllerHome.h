@@ -2,21 +2,18 @@
 	#define _CHOME_H
 
 #include "ControllerGeneral.h"
+#include "../graphic/LayoutHome.h"
 
 using namespace std;
 
 class ControllerHome : public ControllerGeneral{
 
 public:
-	ControllerHome(double width, double height, const char * logo, double maxW,double maxH, SShaders* Shaders);
+	ControllerHome(double width, double height);
 	~ControllerHome();
 
-	virtual void display();
 	virtual string setDisplay(string titleButton);
 	string action(double x, double y);
-
-private:
-	void createButtons();
 };
 #endif
 

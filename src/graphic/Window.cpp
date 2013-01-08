@@ -1,15 +1,15 @@
 #include "Window.h"
 #include "../GlWindow.h"
 
-Window::Window(double width, double height, const char * logo, double maxW,double maxH, list<mButton*> lButtons, SShaders *Shaders, int nbButtonSquare){
+Window::Window(double width, double height, const char * logo, double maxW,double maxH, Layout *layout, SShaders *Shaders){
 
 	float factor=1;
 	Height=2*factor*height/width;
 	Width= 2*factor;
 	this->taskBar = new TaskBar("../content/polytech.png",0.5,0.5, 2*factor, 2*factor*height/width*.1); //pour la hauteur le calcul est le suivant: Top-Bottom * 30%
 	this->Shaders = Shaders;
-	this->lButtons = lButtons;
-	this->nbButtonSquare = nbButtonSquare;
+	this->layout = layout;
+	this->nbButtonSquare = layout->getNbButtonSquare();
 	// Matrix operations
 	//	MVmatrix*=OpenUtility::CMat4x4<float>().SetLookAt(0,2,3,0,0,0,0,1,0);
 	//Tmatrix*=OpenUtility::CMat4x4<float>().SetTranslate(1,-3, 0);
@@ -37,6 +37,9 @@ void Window::display(){
 	taskBar->Draw();
 	GL_CHECK();
 
+	list<mButton*> lButtons = this->layout->getButtons();
+	this->nbButtonSquare = this->layout->getNbButtonSquare();
+	
 	if(!lButtons.empty())
 	{
 		list<OpenUtility::CMat4x4<float> > lTransButton;  // list contenant la liste des translations à effectuer
@@ -121,6 +124,11 @@ void Window::display(){
 			}
 		}
 	}
+}
+
+void Window::setLayout(Layout *layout){
+	this->layout = layout;
+	this->nbButtonSquare = layout->getNbButtonSquare();
 }
 
 Window::~Window(){

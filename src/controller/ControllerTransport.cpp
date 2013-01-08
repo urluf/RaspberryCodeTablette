@@ -5,38 +5,27 @@
  *      Author: developpeur
  */
 
-
 #include "ControllerTransport.h"
 
-ControllerTransport::ControllerTransport(double width, double height, const char * logo, double maxW,double maxH, SShaders* Shaders ) : ControllerGeneral(width, height, logo, maxW, maxH, Shaders){
+ControllerTransport::ControllerTransport(double width, double height) : ControllerGeneral(width, height){
 
-	this->model = new Model(Model::PERSO);
-	mButton::reInitNbButton_Square();//met le nombre de boutons carré à zéro car la varible est de type static et que plusieurs controleurs vont l'utiliser
-	createButtons();
-	nbButtonSquare = mButton::getNbButton();
-	this->window = new Window(width, height, logo, maxW, maxH, lButtons, Shaders, nbButtonSquare);
-}
-
-//à cleaner!!
-void  ControllerTransport::createButtons(){
-	this->lButtons.push_back(new mButton("Transport en commun","",SQUARE ));
-	this->lButtons.push_back(new mButton("Taxi", "", SQUARE));
-	this->lButtons.push_back(new mButton("Aéroport", "", SQUARE));
-	this->lButtons.push_back(new mButton("Close", "", CIRCLE ));
-}
-
-void ControllerTransport::display(){
-	this->window->display();
+	this->model = new Model(Model::TRANSPORT);
+	this->layout = new LayoutTransport();
 }
 
 string ControllerTransport::setDisplay(string titleButton){
+	return "";
 //doit changer l'affichage en fonction des touches sur lesquels on a appuyé
 }
 
 string ControllerTransport::action(double x, double y){
+	/*faire appel à action de controleur general et récupérer le nom du bouton
+	si le nom du bouton ne fait pas parti de controllerTransport alors on retourne ce que nous a renvoyé action du père
+	sinon on change le numéro de la page dans le modèle et on averti les autres avec le patron observateur
+	à l'aide de update, on change le layout*/
 	return "NULL";
 }
 
 ControllerTransport::~ControllerTransport(){
-	delete this->window;
+
 }

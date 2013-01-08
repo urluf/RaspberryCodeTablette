@@ -24,17 +24,15 @@ protected:
 	int numPage;
 	Page currentPage;
 
-protected:
-	void pageSuivante();
-	void pagePrecedente();
-	void backToPage(int page);
-
-
 public:
 	Model();
 	Model(Page page);
 	~Model();
 	string getCurrentPage();
 	int getNumPage();
+	void pageSuivante();
+	void pagePrecedente();
+	void backToPage(int page);
+	void premierePage();
 };
 #endif

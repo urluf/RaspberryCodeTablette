@@ -45,6 +45,10 @@ void Model::pagePrecedente(){
 	this->numPage--;
 }
 
+void Model::premierePage(){
+	this->numPage = 1;
+}
+
 string Model::getCurrentPage(){
 
 	switch(this->currentPage){

@@ -94,8 +94,10 @@ src/Client.d: ../src/Client.cpp ../src/Client.h ../src/GlWindow.h \
  ../src/graphic/TaskBar.h ../src/graphic/DrawSquare.h ../src/SShaders.h \
  ../src/controller/ControllerMain.h ../src/controller/ControllerGeneral.h \
  ../src/controller/../graphic/TaskBar.h \
- ../src/controller/../graphic/Window.h \
- ../src/controller/../graphic/TaskBar.h \
+ ../src/controller/../model/Model.h \
+ ../src/controller/../model/../Observable.h \
+ ../src/controller/../model/../Observer.h ../src/controller/../GlWindow.h \
+ ../src/controller/../graphic/Layout.h \
  ../src/controller/../graphic/../model/mButton.h \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/CMat4x4.h \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/Res/CMat4x4.cxx \
@@ -103,18 +105,18 @@ src/Client.d: ../src/Client.cpp ../src/Client.h ../src/GlWindow.h \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/Res/../../Utility/3D/../Stream/Stream.h \
  ../src/controller/../graphic/../model/../EnumTypeButton.h \
  ../src/controller/../graphic/../model/Coordonnee.h \
- ../src/controller/../graphic/../SShaders.h \
  ../src/controller/../graphic/../EnumTypeButton.h \
+ ../src/controller/../graphic/../Observer.h \
+ ../src/controller/ControllerHome.h \
+ ../src/controller/../graphic/LayoutHome.h \
+ ../src/controller/../graphic/Layout.h \
+ ../src/controller/ControllerTransport.h \
+ ../src/controller/../graphic/LayoutTransport.h \
+ ../src/controller/../graphic/Window.h \
+ ../src/controller/../graphic/TaskBar.h \
+ ../src/controller/../graphic/../SShaders.h \
  ../src/controller/../graphic/DrawCircle.h \
- ../src/controller/../graphic/DrawSquare.h \
- ../src/controller/../model/Model.h \
- ../src/controller/../model/../Observable.h \
- ../src/controller/../model/../Observer.h \
- ../src/controller/../model/../Observable.h \
- ../src/controller/../GlWindow.h ../src/controller/../SShaders.h \
- ../src/controller/../model/mButton.h \
- ../src/controller/../EnumTypeButton.h ../src/controller/ControllerHome.h \
- ../src/controller/ControllerTransport.h
+ ../src/controller/../graphic/DrawSquare.h
 
 ../src/Client.h:
 
@@ -324,9 +326,15 @@ src/Client.d: ../src/Client.cpp ../src/Client.h ../src/GlWindow.h \
 
 ../src/controller/../graphic/TaskBar.h:
 
-../src/controller/../graphic/Window.h:
+../src/controller/../model/Model.h:
 
-../src/controller/../graphic/TaskBar.h:
+../src/controller/../model/../Observable.h:
+
+../src/controller/../model/../Observer.h:
+
+../src/controller/../GlWindow.h:
+
+../src/controller/../graphic/Layout.h:
 
 ../src/controller/../graphic/../model/mButton.h:
 
@@ -342,30 +350,26 @@ src/Client.d: ../src/Client.cpp ../src/Client.h ../src/GlWindow.h \
 
 ../src/controller/../graphic/../model/Coordonnee.h:
 
-../src/controller/../graphic/../SShaders.h:
-
 ../src/controller/../graphic/../EnumTypeButton.h:
+
+../src/controller/../graphic/../Observer.h:
+
+../src/controller/ControllerHome.h:
+
+../src/controller/../graphic/LayoutHome.h:
+
+../src/controller/../graphic/Layout.h:
+
+../src/controller/ControllerTransport.h:
+
+../src/controller/../graphic/LayoutTransport.h:
+
+../src/controller/../graphic/Window.h:
+
+../src/controller/../graphic/TaskBar.h:
+
+../src/controller/../graphic/../SShaders.h:
 
 ../src/controller/../graphic/DrawCircle.h:
 
 ../src/controller/../graphic/DrawSquare.h:
-
-../src/controller/../model/Model.h:
-
-../src/controller/../model/../Observable.h:
-
-../src/controller/../model/../Observer.h:
-
-../src/controller/../model/../Observable.h:
-
-../src/controller/../GlWindow.h:
-
-../src/controller/../SShaders.h:
-
-../src/controller/../model/mButton.h:
-
-../src/controller/../EnumTypeButton.h:
-
-../src/controller/ControllerHome.h:
-
-../src/controller/ControllerTransport.h:

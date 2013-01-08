@@ -6,18 +6,27 @@
 CPP_SRCS += \
 ../src/graphic/DrawCircle.cpp \
 ../src/graphic/DrawSquare.cpp \
+../src/graphic/Layout.cpp \
+../src/graphic/LayoutHome.cpp \
+../src/graphic/LayoutTransport.cpp \
 ../src/graphic/TaskBar.cpp \
 ../src/graphic/Window.cpp 
 
 OBJS += \
 ./src/graphic/DrawCircle.o \
 ./src/graphic/DrawSquare.o \
+./src/graphic/Layout.o \
+./src/graphic/LayoutHome.o \
+./src/graphic/LayoutTransport.o \
 ./src/graphic/TaskBar.o \
 ./src/graphic/Window.o 
 
 CPP_DEPS += \
 ./src/graphic/DrawCircle.d \
 ./src/graphic/DrawSquare.d \
+./src/graphic/Layout.d \
+./src/graphic/LayoutHome.d \
+./src/graphic/LayoutTransport.d \
 ./src/graphic/TaskBar.d \
 ./src/graphic/Window.d 
 

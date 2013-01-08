@@ -6,15 +6,14 @@
 #include "ControllerHome.h"
 #include "ControllerTransport.h"
 #include "../GlWindow.h"
-#include "../SShaders.h"
-
+#include "../graphic/Window.h"
 
 class ControllerMain{
 private:
+	Window *window;
 	ControllerGeneral *currentController;
 	ControllerTransport *controllerTransport;
 	ControllerHome *controllerHome;
-	Model *modelCurrentController;
 
 public:
 	ControllerMain(double width, double height, const char * logo, double maxW,double maxH, SShaders *Shaders);

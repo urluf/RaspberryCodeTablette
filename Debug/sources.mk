@@ -40,4 +40,5 @@ obj/src/OpenUtility/Utility/Network \
 obj/src/OpenUtility/Utility/Math \
 obj/src/OpenUtility/Utility/Filesystem \
 obj/src/OpenUtility/Utility/3D \
+include/vjson \
 

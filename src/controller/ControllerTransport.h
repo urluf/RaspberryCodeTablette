@@ -4,23 +4,19 @@
  *  Created on: 11 déc. 2012
  *      Author: developpeur
  */
-
-#include "ControllerGeneral.h"
-
 #ifndef CONTROLLERTRANSPORT_H_
 #define CONTROLLERTRANSPORT_H_
 
+#include "ControllerGeneral.h"
+#include "../graphic/LayoutTransport.h"
+
 class ControllerTransport : public ControllerGeneral{
 public:
-	ControllerTransport(double width, double height, const char * logo, double maxW,double maxH, SShaders* Shaders );
+	ControllerTransport(double width, double height);
 	~ControllerTransport();
 
-	virtual void display();
 	virtual string setDisplay(string titleButton);
 	string action(double x, double y);
-
-private:
-	void createButtons();
 
 };
 

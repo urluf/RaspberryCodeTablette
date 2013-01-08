@@ -28,6 +28,7 @@ src/graphic/Window.d: ../src/graphic/Window.cpp ../src/graphic/Window.h \
  ../src/graphic/../model/../EnumTypeButton.h \
  ../src/graphic/../model/Coordonnee.h ../src/graphic/../SShaders.h \
  ../src/graphic/../EnumTypeButton.h ../src/graphic/DrawCircle.h \
+ ../src/graphic/Layout.h ../src/graphic/../Observer.h \
  ../src/graphic/../GlWindow.h /opt/vc/include/EGL/egl.h \
  /opt/vc/include/EGL/eglplatform.h \
  /opt/vc/include/EGL/../KHR/khrplatform.h /opt/vc/include/bcm_host.h \
@@ -167,6 +168,10 @@ src/graphic/Window.d: ../src/graphic/Window.cpp ../src/graphic/Window.h \
 ../src/graphic/../EnumTypeButton.h:
 
 ../src/graphic/DrawCircle.h:
+
+../src/graphic/Layout.h:
+
+../src/graphic/../Observer.h:
 
 ../src/graphic/../GlWindow.h:
 

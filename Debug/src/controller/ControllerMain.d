@@ -3,42 +3,10 @@ src/controller/ControllerMain.d: ../src/controller/ControllerMain.cpp \
  ../src/controller/../graphic/TaskBar.h \
  ../src/controller/../graphic/DrawSquare.h /opt/vc/include/GLES2/gl2.h \
  /opt/vc/include/GLES2/gl2platform.h /opt/vc/include/KHR/khrplatform.h \
- ../src/controller/../graphic/Window.h \
- /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/CShaderProgram.h \
- /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/CShaderFile.h \
- /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../Stream/Stream.h \
- /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/CListe.h \
- /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/CContenerInterface.h \
- /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/Res/CListe.cxx \
- /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/Res/../../Utility/Memory.h \
- /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/Res/../../Utility/CodeErreur.h \
- /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/CMap.h \
- /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/CAllocator.h \
- /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/../Utility/Memory.h \
- /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/Res/CAllocator.cxx \
- /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/Res/CMap.cxx \
- /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/CVector.h \
- /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/Res/CVector.cxx \
- /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/CTexture.h \
- /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/CTextureQuad.h \
- /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/CTexture.h \
- ../src/controller/../graphic/TaskBar.h \
- ../src/controller/../graphic/../model/mButton.h \
- /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/CMat4x4.h \
- /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/Res/CMat4x4.cxx \
- /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/Res/../../Utility/3D/3D.h \
- /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/Res/../../Utility/3D/../Stream/Stream.h \
- ../src/controller/../graphic/../model/../EnumTypeButton.h \
- ../src/controller/../graphic/../model/Coordonnee.h \
- ../src/controller/../graphic/../SShaders.h \
- ../src/controller/../graphic/../EnumTypeButton.h \
- ../src/controller/../graphic/DrawCircle.h \
  ../src/controller/../model/Model.h \
  ../src/controller/../model/../Observable.h \
- ../src/controller/../model/../Observer.h \
- ../src/controller/../model/../Observable.h \
- ../src/controller/../GlWindow.h /opt/vc/include/EGL/egl.h \
- /opt/vc/include/EGL/eglplatform.h \
+ ../src/controller/../model/../Observer.h ../src/controller/../GlWindow.h \
+ /opt/vc/include/EGL/egl.h /opt/vc/include/EGL/eglplatform.h \
  /opt/vc/include/EGL/../KHR/khrplatform.h /opt/vc/include/bcm_host.h \
  /opt/vc/include/interface/vmcs_host/vc_dispmanx.h \
  /opt/vc/include/interface/vcos/vcos.h \
@@ -105,12 +73,47 @@ src/controller/ControllerMain.d: ../src/controller/ControllerMain.cpp \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/Stream/Stream.h \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/CTable.h \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/../Utility/Memory.h \
+ /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/../Utility/CodeErreur.h \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/Res/CTable.cxx \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/Res/../../Utility/Memory.h \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/CListe.h \
- ../src/controller/../SShaders.h ../src/controller/../model/mButton.h \
- ../src/controller/../EnumTypeButton.h ../src/controller/ControllerHome.h \
- ../src/controller/ControllerTransport.h
+ /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/CContenerInterface.h \
+ /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/Res/CListe.cxx \
+ ../src/controller/../graphic/Layout.h \
+ ../src/controller/../graphic/../model/mButton.h \
+ /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/CMat4x4.h \
+ /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/Res/CMat4x4.cxx \
+ /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/Res/../../Utility/3D/3D.h \
+ /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/Res/../../Utility/3D/../Stream/Stream.h \
+ ../src/controller/../graphic/../model/../EnumTypeButton.h \
+ ../src/controller/../graphic/../model/Coordonnee.h \
+ ../src/controller/../graphic/../EnumTypeButton.h \
+ ../src/controller/../graphic/../Observer.h \
+ ../src/controller/ControllerHome.h \
+ ../src/controller/../graphic/LayoutHome.h \
+ ../src/controller/../graphic/Layout.h \
+ ../src/controller/ControllerTransport.h \
+ ../src/controller/../graphic/LayoutTransport.h \
+ ../src/controller/../graphic/Window.h \
+ /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/CShaderProgram.h \
+ /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/CShaderFile.h \
+ /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../Stream/Stream.h \
+ /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/CListe.h \
+ /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/CMap.h \
+ /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/CAllocator.h \
+ /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/../Utility/Memory.h \
+ /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/Res/CAllocator.cxx \
+ /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/Res/CMap.cxx \
+ /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/Res/../../Utility/Memory.h \
+ /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/CVector.h \
+ /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/CContenerInterface.h \
+ /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/Res/CVector.cxx \
+ /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/CTexture.h \
+ /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/CTextureQuad.h \
+ /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/CTexture.h \
+ ../src/controller/../graphic/TaskBar.h \
+ ../src/controller/../graphic/../SShaders.h \
+ ../src/controller/../graphic/DrawCircle.h
 
 ../src/controller/ControllerMain.h:
 
@@ -126,73 +129,11 @@ src/controller/ControllerMain.d: ../src/controller/ControllerMain.cpp \
 
 /opt/vc/include/KHR/khrplatform.h:
 
-../src/controller/../graphic/Window.h:
-
-/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/CShaderProgram.h:
-
-/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/CShaderFile.h:
-
-/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../Stream/Stream.h:
-
-/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/CListe.h:
-
-/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/CContenerInterface.h:
-
-/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/Res/CListe.cxx:
-
-/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/Res/../../Utility/Memory.h:
-
-/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/Res/../../Utility/CodeErreur.h:
-
-/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/CMap.h:
-
-/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/CAllocator.h:
-
-/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/../Utility/Memory.h:
-
-/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/Res/CAllocator.cxx:
-
-/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/Res/CMap.cxx:
-
-/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/CVector.h:
-
-/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/Res/CVector.cxx:
-
-/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/CTexture.h:
-
-/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/CTextureQuad.h:
-
-/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/CTexture.h:
-
-../src/controller/../graphic/TaskBar.h:
-
-../src/controller/../graphic/../model/mButton.h:
-
-/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/CMat4x4.h:
-
-/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/Res/CMat4x4.cxx:
-
-/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/Res/../../Utility/3D/3D.h:
-
-/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/Res/../../Utility/3D/../Stream/Stream.h:
-
-../src/controller/../graphic/../model/../EnumTypeButton.h:
-
-../src/controller/../graphic/../model/Coordonnee.h:
-
-../src/controller/../graphic/../SShaders.h:
-
-../src/controller/../graphic/../EnumTypeButton.h:
-
-../src/controller/../graphic/DrawCircle.h:
-
 ../src/controller/../model/Model.h:
 
 ../src/controller/../model/../Observable.h:
 
 ../src/controller/../model/../Observer.h:
-
-../src/controller/../model/../Observable.h:
 
 ../src/controller/../GlWindow.h:
 
@@ -334,18 +275,84 @@ src/controller/ControllerMain.d: ../src/controller/ControllerMain.cpp \
 
 /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/../Utility/Memory.h:
 
+/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/../Utility/CodeErreur.h:
+
 /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/Res/CTable.cxx:
 
 /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/Res/../../Utility/Memory.h:
 
 /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/CListe.h:
 
-../src/controller/../SShaders.h:
+/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/CContenerInterface.h:
 
-../src/controller/../model/mButton.h:
+/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/Res/CListe.cxx:
 
-../src/controller/../EnumTypeButton.h:
+../src/controller/../graphic/Layout.h:
+
+../src/controller/../graphic/../model/mButton.h:
+
+/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/CMat4x4.h:
+
+/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/Res/CMat4x4.cxx:
+
+/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/Res/../../Utility/3D/3D.h:
+
+/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/Res/../../Utility/3D/../Stream/Stream.h:
+
+../src/controller/../graphic/../model/../EnumTypeButton.h:
+
+../src/controller/../graphic/../model/Coordonnee.h:
+
+../src/controller/../graphic/../EnumTypeButton.h:
+
+../src/controller/../graphic/../Observer.h:
 
 ../src/controller/ControllerHome.h:
 
+../src/controller/../graphic/LayoutHome.h:
+
+../src/controller/../graphic/Layout.h:
+
 ../src/controller/ControllerTransport.h:
+
+../src/controller/../graphic/LayoutTransport.h:
+
+../src/controller/../graphic/Window.h:
+
+/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/CShaderProgram.h:
+
+/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/CShaderFile.h:
+
+/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../Stream/Stream.h:
+
+/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/CListe.h:
+
+/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/CMap.h:
+
+/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/CAllocator.h:
+
+/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/../Utility/Memory.h:
+
+/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/Res/CAllocator.cxx:
+
+/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/Res/CMap.cxx:
+
+/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/Res/../../Utility/Memory.h:
+
+/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/CVector.h:
+
+/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/CContenerInterface.h:
+
+/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/Res/CVector.cxx:
+
+/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/CTexture.h:
+
+/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/CTextureQuad.h:
+
+/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/CTexture.h:
+
+../src/controller/../graphic/TaskBar.h:
+
+../src/controller/../graphic/../SShaders.h:
+
+../src/controller/../graphic/DrawCircle.h:

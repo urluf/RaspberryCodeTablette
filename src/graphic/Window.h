@@ -14,6 +14,7 @@
 #include "DrawSquare.h"
 #include <Template/CMat4x4.h>
 #include <GLES2/gl2.h>
+#include "Layout.h"
 
 using namespace std;
 
@@ -23,15 +24,16 @@ protected:
 	OpenUtility::CMat4x4<float> Pmatrix;
 	TaskBar *taskBar;
 	SShaders *Shaders;
-	list<mButton*>	lButtons;
+	Layout *layout;
 	float Height, Width;
 	int nbButtonSquare;
 
 public:
-Window(double width, double height, const char * logo, double maxW,double maxH, list<mButton*> lButtons, SShaders *Shaders, int nbButtonSquare);
+Window(double width, double height, const char * logo, double maxW,double maxH, Layout *layout, SShaders *Shaders);
 ~Window();
 TaskBar* getTaskBar();
 void display();
+void setLayout(Layout *layout);
 
 };
 
