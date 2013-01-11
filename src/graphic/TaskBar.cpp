@@ -8,7 +8,7 @@
 #include "TaskBar.h"
 
 TaskBar::TaskBar(const char *srcImg,double maxW,double maxH, double width, double height){
-	//this->logo = new CTextureQuad(*srcImg, maxW, maxH);
+	this->logo = new CTextureQuad(srcImg, maxW,maxH);
 	this->bar = new DrawSquare(width/2, height/2);
 
 }
@@ -44,9 +44,9 @@ DrawSquare* TaskBar::getBar(){
 	return (this->bar);
 }
 
-/*CTextureQuad  TaskBar::getLogo(){
+CTextureQuad*  TaskBar::getLogo(){
 	return this->logo;
-}*/
+}
 
 time_t TaskBar::getTime(){
 	return this->time;

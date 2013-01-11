@@ -22,7 +22,7 @@ struct vertexSquare{
 
 
 public:
-	DrawSquare(double width, double height);
+	DrawSquare(double width, double height, double depht = 0);
 	void AttachAttribToData(GLuint vPos, GLuint vNorm);
 	void Draw();
 
@@ -31,7 +31,7 @@ public:
 
 
 private:
-	void SetVertex(vertexSquare &vertex, double posX, double posY);
+	void SetVertex(vertexSquare &vertex, double posX, double posY, double posZ);
 
 private:
 		GLuint VBObuffer;

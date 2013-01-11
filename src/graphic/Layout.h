@@ -17,7 +17,7 @@ protected:
 
 public:
 	Layout();
-	~Layout();
+	virtual ~Layout();
 	virtual int getNbButtonSquare();
 	virtual list<mButton*> getButtons();
 	

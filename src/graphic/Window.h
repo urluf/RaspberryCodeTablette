@@ -15,26 +15,35 @@
 #include <Template/CMat4x4.h>
 #include <GLES2/gl2.h>
 #include "Layout.h"
-
 using namespace std;
 
 class Window{
 
+	struct STexture
+	{
+		GLfloat coord[2];
+	};
+
 protected:
 	OpenUtility::CMat4x4<float> Pmatrix;
-	TaskBar *taskBar;
+	DrawSquare *taskBar;
+	CTextureQuad *logo;
 	SShaders *Shaders;
 	Layout *layout;
 	float Height, Width;
 	int nbButtonSquare;
+	GLuint VBOtex;
+	GLuint VBOtexIcon;
+	CTexture *textureFondBouton;
+	CTexture *textureIcone;
+
 
 public:
 Window(double width, double height, const char * logo, double maxW,double maxH, Layout *layout, SShaders *Shaders);
 ~Window();
-TaskBar* getTaskBar();
 void display();
 void setLayout(Layout *layout);
-
+STexture* fillTexIcon(string title);
 };
 
 #endif

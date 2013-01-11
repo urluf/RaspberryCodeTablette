@@ -14,7 +14,7 @@ private:
 	};
 
 public:
-	CTextureQuad(const char *srcImg,double maxW=1.0,double maxH=1.0);
+	CTextureQuad(const char *srcImg,double maxW=1.0,double maxH=1.0, double z = 0);
 	CTextureQuad(CTexture *tex,double maxW=1.0,double maxH=1.0);
 	CTextureQuad(const CTextureQuad &obj);
 	virtual ~CTextureQuad();
@@ -22,7 +22,7 @@ public:
 	inline CTexture* GetTexture() {return(Texture);}
 	inline double GetW() {return(w);}
 	inline double GetH() {return(h);}
-	void AttachAttribToData(GLuint vPos,GLuint vNorm,GLuint vTex);
+	void AttachAttribToData(GLuint vPos,GLuint vNorm,GLuint vTex, GLuint texID);
 	void Draw();
 
 private:
@@ -32,7 +32,7 @@ private:
 private:
 	bool HasAllocatedTex;
 	CTexture *Texture;
-	double w,h;
+	double w,h,z;
 	GLuint VBObuffer;
 };
 

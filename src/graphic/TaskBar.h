@@ -12,12 +12,13 @@
 
 #include "DrawSquare.h"
 #include <time.h>
+#include "../OpenUtility/Utility/3D/CTextureQuad.h"
 
 
 class TaskBar{
 
 private:
-	//CTextureQuad logo;
+	CTextureQuad *logo;
 	time_t time;
 	DrawSquare *bar;
 
@@ -30,7 +31,7 @@ public:
 	//void setLogo(CTextureQuad logo);
 	void setTime(time_t time);
 	DrawSquare* getBar();
-	//CTextureQuad getLogo();
+	CTextureQuad* getLogo();
 	time_t getTime();
 };
 

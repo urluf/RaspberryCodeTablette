@@ -20,6 +20,7 @@ src/graphic/Window.d: ../src/graphic/Window.cpp ../src/graphic/Window.h \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/CTextureQuad.h \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/CTexture.h \
  ../src/graphic/TaskBar.h ../src/graphic/DrawSquare.h \
+ ../src/graphic/../OpenUtility/Utility/3D/CTextureQuad.h \
  ../src/graphic/../model/mButton.h \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/CMat4x4.h \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/Res/CMat4x4.cxx \
@@ -148,6 +149,8 @@ src/graphic/Window.d: ../src/graphic/Window.cpp ../src/graphic/Window.h \
 ../src/graphic/TaskBar.h:
 
 ../src/graphic/DrawSquare.h:
+
+../src/graphic/../OpenUtility/Utility/3D/CTextureQuad.h:
 
 ../src/graphic/../model/mButton.h:
 
