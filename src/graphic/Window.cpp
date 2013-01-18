@@ -39,7 +39,6 @@ Window::Window(double width, double height, const char * logo, double maxW,doubl
 
 }
 void Window::display(){
-	glUniform1i(Shaders->RenderingShader["u_id"],0);
 	OpenUtility::CMat4x4<float> MVmatrix,MVPmatrix,Tmatrix;
 
 	MVmatrix.SetLookAt(0,0,1,0,0,0,0,1,0);
