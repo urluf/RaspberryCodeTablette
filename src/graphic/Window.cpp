@@ -7,12 +7,17 @@ Window::Window(double width, double height, const char * logo, double maxW,doubl
 	Height=2*factor*height/width;
 	Width= 2*factor;
 	this->taskBar = new DrawSquare ((2*factor)/2, (2*factor*height/width*.1)/2, -0.00001); //pour la hauteur le calcul est le suivant: Top-Bottom * 30%
-	this->logo = new CTextureQuad("../content/polytech.png", 0.1,0.05);
-	textureFondBouton=CTexture::LoadTexture("../content/boutonBase.png");
-	textureIcone = CTexture::LoadTexture("../content/icones43.png");
+	this->logo = new OpenUtility::CTextureQuad("../content/polytech.png", 0.23,0.2);
+	this->textureFondBouton=OpenUtility::CTexture::LoadTextureFile("../content/boutonBase.png");
+	this->textureIcone = OpenUtility::CTexture::LoadTextureFile("../content/icones43.png");
 	this->Shaders = Shaders;
 	this->layout = layout;
 	this->nbButtonSquare = layout->getNbButtonSquare();
+	Font40=new OpenUtility::CFontLoader("../content/arial.ttf",11);
+	_3dText=new OpenUtility::C3DText(Font40);
+	GL_CHECK();
+
+
 	// Matrix operations
 	//	MVmatrix*=OpenUtility::CMat4x4<float>().SetLookAt(0,2,3,0,0,0,0,1,0);
 	//Tmatrix*=OpenUtility::CMat4x4<float>().SetTranslate(1,-3, 0);
@@ -34,6 +39,7 @@ Window::Window(double width, double height, const char * logo, double maxW,doubl
 
 }
 void Window::display(){
+	glUniform1i(Shaders->RenderingShader["u_id"],0);
 	OpenUtility::CMat4x4<float> MVmatrix,MVPmatrix,Tmatrix;
 
 	MVmatrix.SetLookAt(0,0,1,0,0,0,0,1,0);
@@ -49,17 +55,18 @@ void Window::display(){
 	glUniformMatrix4fv(Shaders->RenderingShader["u_MVPmatrix"],1,GL_FALSE,(MVPmatrix*Tmatrix).GetMatrix());
 	GL_CHECK();
 	glBindBuffer(GL_ARRAY_BUFFER,VBOtex);
-	glVertexAttribPointer(Shaders->RenderingShader["vTextCoord"],2,GL_FLOAT,GL_FALSE,sizeof(STexture),(void*)0);
-	glEnableVertexAttribArray(Shaders->RenderingShader["vTextCoord"]);
-	GL_CHECK();
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D,textureFondBouton->GetId());
 	// Set the sampler texture unit to 0
 	glUniform1i(Shaders->RenderingShader["u_texId"],0);
+	glVertexAttribPointer(Shaders->RenderingShader["vTexCoord"],2,GL_FLOAT,GL_FALSE,sizeof(STexture),(void*)0);
+	glEnableVertexAttribArray(Shaders->RenderingShader["vTexCoord"]);
+	GL_CHECK();
+
 	taskBar->Draw();
 	GL_CHECK();
 	Tmatrix.SetTranslate((-Width/2)*.9,-(Height/2)*.9,0.9);
-	logo->AttachAttribToData(Shaders->RenderingShader["vPos"], Shaders->RenderingShader["vNorm"], Shaders->RenderingShader["vTextCoord"], Shaders->RenderingShader["u_texId"]);
+	logo->AttachAttribToData(Shaders->RenderingShader["vPos"], Shaders->RenderingShader["vNorm"], Shaders->RenderingShader["vTexCoord"]);
 	GL_CHECK();
 	glUniformMatrix4fv(Shaders->RenderingShader["u_Nmatrix"],1,GL_FALSE,(MVmatrix*Tmatrix).GetMatrix());
 	GL_CHECK();
@@ -71,6 +78,7 @@ void Window::display(){
 	
 	if(!lButtons.empty())
 	{
+		list<OpenUtility::CMat4x4<float> > lTransIconesText;
 		list<OpenUtility::CMat4x4<float> > lTransIcones;
 		list<OpenUtility::CMat4x4<float> > lTransButton;  // list contenant la liste des translations à effectuer
 		list<Coordonnee*> lCoord;
@@ -81,43 +89,54 @@ void Window::display(){
 		/*Dans cette conditionnelle en fonction du nombre de boutons que l'on souhaite créer, on va 
  * 		enregister les translations à faire pour les boutons de formes carrés, suivi des coordonnées des points en pourcentages par rapport à l'écran par exemple xMin du carré est à 25% de la largeur total...*/
 		if(this->nbButtonSquare<=3){
-			lTransButton.push_back(Tmatrix.SetTranslate(0, (Height/2)*0.5,0.9)); //tout en haut au milieu
+			lTransButton.push_back(Tmatrix.SetTranslate(0, (Height/2)*0.5,0.8999)); //tout en haut au milieu
 			lCoord.push_back(new Coordonnee(0.5-pTailleWS, 0.5+pTailleWS, 0.25-pTailleHS, 0.25+pTailleHS));
 			lTransIcones.push_back(Tmatrix.SetTranslate(-(Width/1.5)*0.5,(Height/1.5)*0.5,0.9));
+			lTransIconesText.push_back(Tmatrix.SetTranslate(-(Width/1.5)*0.1, (Height*4.5),0.9));
 
-			lTransButton.push_back(Tmatrix.SetTranslate(0, 0, 0.9)); //milieu
+			lTransButton.push_back(Tmatrix.SetTranslate(0, 0, 0.8999)); //milieu
 			lCoord.push_back(new Coordonnee(0.5-pTailleWS, 0.5+pTailleWS, 0.5-pTailleHS, 0.5+pTailleHS));
 			lTransIcones.push_back(Tmatrix.SetTranslate(-(Width/1.2)*0.5,(Height/1.2)*0.5,0.9));
+			lTransIconesText.push_back(Tmatrix.SetTranslate(-(Width/1.5)*0.1,-(Height*0.5),0.9));
 
-			lTransButton.push_back(Tmatrix.SetTranslate(0, -(Height/2)*0.5,0.9));
+
+			lTransButton.push_back(Tmatrix.SetTranslate(0, -(Height/2)*0.5,0.8999));
 			lCoord.push_back(new Coordonnee(0.5-pTailleWS, 0.5+pTailleWS, 0.75-pTailleHS, 0.75+pTailleHS));//coord(xMin, xMax, yMin, yMax)
 			lTransIcones.push_back(Tmatrix.SetTranslate(-(Width/1.2)*0.5,-(Height/1.2)*0.5,0.9));
+			lTransIconesText.push_back(Tmatrix.SetTranslate(-(Width/1.5)*0.1,-(Height*5.3),0.9));
 
 		}
 		else{
-			lTransButton.push_back(Tmatrix.SetTranslate(-(Width/2)*0.5,(Height/2)*0.5,0.9)); //en haut à gauche
+			lTransButton.push_back(Tmatrix.SetTranslate(-(Width/2)*0.5,(Height/2)*0.5,0.8999)); //en haut à gauche
 			lCoord.push_back(new Coordonnee(0.25-pTailleWS, 0.25+pTailleWS, 0.25-pTailleHS, 0.25+pTailleHS));
 			lTransIcones.push_back(Tmatrix.SetTranslate(-(Width/1.2)*0.5,(Height/2)*0.5,0.9));
+			lTransIconesText.push_back(Tmatrix.SetTranslate(-(Width*6.2), (Height*4.5),0.9));
 
-			lTransButton.push_back(Tmatrix.SetTranslate((Width/2)*0.5,-(Height/2)*0.5,0.9));//en bas à droite
+			lTransButton.push_back(Tmatrix.SetTranslate((Width/2)*0.5,-(Height/2)*0.5,0.8999));//en bas à droite
 			lCoord.push_back(new Coordonnee(0.75-pTailleWS, 0.75+pTailleWS, 0.75-pTailleHS, 0.75+pTailleHS));
 			lTransIcones.push_back(Tmatrix.SetTranslate((Width/6)*0.5,-(Height/2)*0.5,0.9));
+			lTransIconesText.push_back(Tmatrix.SetTranslate((Width*3),-(Height*5.3),0.9));
 
-			lTransButton.push_back(Tmatrix.SetTranslate((Width/2)*0.5,(Height/2)*0.5,0.9));//en haut à droite
+			lTransButton.push_back(Tmatrix.SetTranslate((Width/2)*0.5,(Height/2)*0.5,0.8999));//en haut à droite
 			lCoord.push_back(new Coordonnee(0.75-pTailleWS, 0.75+pTailleWS, 0.25-pTailleHS, 0.25+pTailleHS));
 			lTransIcones.push_back(Tmatrix.SetTranslate((Width/6)*0.5,(Height/2)*0.5,0.9));
+			lTransIconesText.push_back(Tmatrix.SetTranslate((Width*4),(Height*4.5),0.9));
 
-			lTransButton.push_back(Tmatrix.SetTranslate(-(Width/2)*0.5,-(Height/2)*0.5,0.9));//en bas à gauche
+
+			lTransButton.push_back(Tmatrix.SetTranslate(-(Width/2)*0.5,-(Height/2)*0.5,0.8999));//en bas à gauche
 			lCoord.push_back(new Coordonnee(0.25-pTailleWS, 0.25+pTailleWS, 0.75-pTailleHS, 0.75+pTailleHS));
 			lTransIcones.push_back(Tmatrix.SetTranslate(-(Width/1.2)*0.5,-(Height/2)*0.5,0.9));
+			lTransIconesText.push_back(Tmatrix.SetTranslate(-(Width*5.4),-(Height*5.3),0.9));
 
-			lTransButton.push_back(Tmatrix.SetTranslate(-(Width/2)*0.5,0,0.9));//au milieu à gauche
+			lTransButton.push_back(Tmatrix.SetTranslate(-(Width/2)*0.5,0,0.8999));//au milieu à gauche
 			lCoord.push_back(new Coordonnee(0.25-pTailleWS, 0.25+pTailleWS, 0.5-pTailleHS, 0.5+pTailleHS));
 			lTransIcones.push_back(Tmatrix.SetTranslate(-(Width/1.2)*0.5,0,0.9));
+			lTransIconesText.push_back(Tmatrix.SetTranslate(-(Width*6),-(Height*0.5),0.9));
 
-			lTransButton.push_back(Tmatrix.SetTranslate((Width/2)*0.5,0,0.9));//au milieu à droite
+			lTransButton.push_back(Tmatrix.SetTranslate((Width/2)*0.5,0,0.8999));//au milieu à droite
 			lCoord.push_back(new Coordonnee(0.75-pTailleWS, 0.75+pTailleWS, 0.5-pTailleHS, 0.5+pTailleHS));
 			lTransIcones.push_back(Tmatrix.SetTranslate((Width/6)*0.5,0,0.9));
+			lTransIconesText.push_back(Tmatrix.SetTranslate((Width*4.4),-(Height*0.5),0.9));
 		}
 
 
@@ -131,18 +150,18 @@ void Window::display(){
 			{
 				(*it)->setCoord((*itCoord));
 
-				DrawSquare *bouton = new DrawSquare(Width*pTailleWS, Height*pTailleHS, -0.00001);
+				DrawSquare *bouton = new DrawSquare(Width*pTailleWS, Height*pTailleHS);
 				bouton->AttachAttribToData(Shaders->RenderingShader["vPos"], Shaders->RenderingShader["vNorm"]);
 				glBindBuffer(GL_ARRAY_BUFFER,VBOtex);
-				glVertexAttribPointer(Shaders->RenderingShader["vTextCoord"],2,GL_FLOAT,GL_FALSE,sizeof(STexture),(void*)0);
-				glEnableVertexAttribArray(Shaders->RenderingShader["vTextCoord"]);
+				glVertexAttribPointer(Shaders->RenderingShader["vTexCoord"],2,GL_FLOAT,GL_FALSE,sizeof(STexture),(void*)0);
+				glEnableVertexAttribArray(Shaders->RenderingShader["vTexCoord"]);
 				glUniformMatrix4fv(Shaders->RenderingShader["u_Nmatrix"],1,GL_FALSE,(MVmatrix*(*itTMatrix)).GetMatrix());
 				GL_CHECK();
 				glUniformMatrix4fv(Shaders->RenderingShader["u_MVPmatrix"],1,GL_FALSE,(MVPmatrix*(*itTMatrix)).GetMatrix());
 				GL_CHECK();
 				glActiveTexture(GL_TEXTURE0);
 				glBindTexture(GL_TEXTURE_2D,textureFondBouton->GetId());
-				// Set the sampler texture unit to 0
+				 //Set the sampler texture unit to 0
 				glUniform1i(Shaders->RenderingShader["u_texId"],0);
 				bouton->Draw();
 				GL_CHECK();
@@ -215,8 +234,8 @@ void Window::display(){
 					glUniformMatrix4fv(Shaders->RenderingShader["u_MVPmatrix"],1,GL_FALSE,(MVPmatrix*(*itTMatrixIcones)).GetMatrix());
 					GL_CHECK();
 					glBindBuffer(GL_ARRAY_BUFFER,VBOtexIcon);
-					glVertexAttribPointer(Shaders->RenderingShader["vTextCoord"],2,GL_FLOAT,GL_FALSE,sizeof(STexture),(void*)0);
-					glEnableVertexAttribArray(Shaders->RenderingShader["vTextCoord"]);
+					glVertexAttribPointer(Shaders->RenderingShader["vTexCoord"],2,GL_FLOAT,GL_FALSE,sizeof(STexture),(void*)0);
+					glEnableVertexAttribArray(Shaders->RenderingShader["vTexCoord"]);
 					glActiveTexture(GL_TEXTURE0);
 					glBindTexture(GL_TEXTURE_2D,textureIcone->GetId());
 					// Set the sampler texture unit to 0
@@ -262,6 +281,26 @@ void Window::display(){
 				delete circle;
 				break;
 			}
+			}
+		}
+		list<OpenUtility::CMat4x4<float> >::iterator itTMatrixText = lTransIconesText.begin();
+		OpenUtility::CMat4x4<float> matrixScale;
+		matrixScale.SetScale(0.05,0.05,1);
+		MVPmatrix = MVPmatrix*matrixScale;
+		for(list<mButton*>::iterator it = lButtons.begin(); it != lButtons.end(); ++it)
+		{
+
+			if((*it)->getTypeButton() == SQUARE){
+				_3dText->SetText((*it)->getTitle().c_str(),OpenUtility::CFontLoader::CFontEngine::EHAlignCenter,OpenUtility::CFontLoader::CFontEngine::EVAlignBaseligne);
+				GL_CHECK();
+				glUniformMatrix4fv(Shaders->RenderingShader["u_Nmatrix"],1,GL_FALSE,(MVmatrix*(Tmatrix.SetTranslate(.9,.9,1))).GetMatrix());
+				GL_CHECK();
+				glUniformMatrix4fv(Shaders->RenderingShader["u_MVPmatrix"],1,GL_FALSE,(MVPmatrix*(*itTMatrixText)).GetMatrix());
+				GL_CHECK();
+				_3dText->AttachAttribToData(Shaders->RenderingShader["vPos"],Shaders->RenderingShader["vNorm"],Shaders->RenderingShader["vTexCoord"]);
+				_3dText->Draw();
+				itTMatrixText++;
+				GL_CHECK();
 			}
 		}
 	}

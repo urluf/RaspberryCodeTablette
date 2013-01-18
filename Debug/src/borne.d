@@ -67,8 +67,8 @@ src/borne.d: ../src/borne.cpp /opt/vc/include/bcm_host.h \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/Parallelism/MultiThread.h \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/Stream/Stream.h \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/CTable.h \
- /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/../Utility/Memory.h \
- /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/../Utility/CodeErreur.h \
+ /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/Memory.h \
+ /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/CodeErreur.h \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/Res/CTable.cxx \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/Res/../../Utility/Memory.h \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/CListe.h \
@@ -87,16 +87,14 @@ src/borne.d: ../src/borne.cpp /opt/vc/include/bcm_host.h \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/CVector.h \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/CContenerInterface.h \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/Res/CVector.cxx \
+ /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../OUException.h \
+ /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../Stream/Stream.h \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/CTexture.h \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/CTextureQuad.h \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/CTexture.h \
  ../src/graphic/DrawSquare.h ../src/graphic/DrawCircle.h \
- ../src/graphic/TaskBar.h ../src/graphic/DrawSquare.h \
- ../src/graphic/../OpenUtility/Utility/3D/CTextureQuad.h \
  ../src/SShaders.h ../src/controller/ControllerMain.h \
- ../src/controller/ControllerGeneral.h \
- ../src/controller/../graphic/TaskBar.h \
- ../src/controller/../model/Model.h \
+ ../src/controller/ControllerGeneral.h ../src/controller/../model/Model.h \
  ../src/controller/../model/../Observable.h \
  ../src/controller/../model/../Observer.h ../src/controller/../GlWindow.h \
  ../src/controller/../graphic/Layout.h \
@@ -115,7 +113,21 @@ src/borne.d: ../src/borne.cpp /opt/vc/include/bcm_host.h \
  ../src/controller/ControllerTransport.h \
  ../src/controller/../graphic/LayoutTransport.h \
  ../src/controller/../graphic/Window.h \
- ../src/controller/../graphic/TaskBar.h \
+ /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/C3DText.h \
+ /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/CFontEngine.h \
+ /usr/local/include/ft2build.h \
+ /usr/local/include/freetype/config/ftheader.h \
+ /usr/local/include/freetype2/freetype/freetype.h \
+ /usr/local/include/freetype/config/ftconfig.h \
+ /usr/local/include/freetype/config/ftoption.h \
+ /usr/local/include/freetype/config/ftstdlib.h \
+ /usr/local/include/freetype/fterrors.h \
+ /usr/local/include/freetype/ftmoderr.h \
+ /usr/local/include/freetype/fterrdef.h \
+ /usr/local/include/freetype/fttypes.h \
+ /usr/local/include/freetype/ftsystem.h \
+ /usr/local/include/freetype/ftimage.h \
+ /home/developpeur/workspace/RaspberryPi/src/OpenUtility/../OpenUtility/Utility/3D/CFontEngine.h \
  ../src/controller/../graphic/../SShaders.h \
  ../src/controller/../graphic/DrawCircle.h \
  ../src/controller/../graphic/DrawSquare.h
@@ -268,9 +280,9 @@ src/borne.d: ../src/borne.cpp /opt/vc/include/bcm_host.h \
 
 /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/CTable.h:
 
-/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/../Utility/Memory.h:
+/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/Memory.h:
 
-/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/../Utility/CodeErreur.h:
+/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/CodeErreur.h:
 
 /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/Res/CTable.cxx:
 
@@ -308,6 +320,10 @@ src/borne.d: ../src/borne.cpp /opt/vc/include/bcm_host.h \
 
 /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/Res/CVector.cxx:
 
+/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../OUException.h:
+
+/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../Stream/Stream.h:
+
 /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/CTexture.h:
 
 /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/CTextureQuad.h:
@@ -318,19 +334,11 @@ src/borne.d: ../src/borne.cpp /opt/vc/include/bcm_host.h \
 
 ../src/graphic/DrawCircle.h:
 
-../src/graphic/TaskBar.h:
-
-../src/graphic/DrawSquare.h:
-
-../src/graphic/../OpenUtility/Utility/3D/CTextureQuad.h:
-
 ../src/SShaders.h:
 
 ../src/controller/ControllerMain.h:
 
 ../src/controller/ControllerGeneral.h:
-
-../src/controller/../graphic/TaskBar.h:
 
 ../src/controller/../model/Model.h:
 
@@ -372,7 +380,35 @@ src/borne.d: ../src/borne.cpp /opt/vc/include/bcm_host.h \
 
 ../src/controller/../graphic/Window.h:
 
-../src/controller/../graphic/TaskBar.h:
+/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/C3DText.h:
+
+/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/CFontEngine.h:
+
+/usr/local/include/ft2build.h:
+
+/usr/local/include/freetype/config/ftheader.h:
+
+/usr/local/include/freetype2/freetype/freetype.h:
+
+/usr/local/include/freetype/config/ftconfig.h:
+
+/usr/local/include/freetype/config/ftoption.h:
+
+/usr/local/include/freetype/config/ftstdlib.h:
+
+/usr/local/include/freetype/fterrors.h:
+
+/usr/local/include/freetype/ftmoderr.h:
+
+/usr/local/include/freetype/fterrdef.h:
+
+/usr/local/include/freetype/fttypes.h:
+
+/usr/local/include/freetype/ftsystem.h:
+
+/usr/local/include/freetype/ftimage.h:
+
+/home/developpeur/workspace/RaspberryPi/src/OpenUtility/../OpenUtility/Utility/3D/CFontEngine.h:
 
 ../src/controller/../graphic/../SShaders.h:
 

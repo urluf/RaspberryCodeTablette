@@ -7,8 +7,8 @@ src/OpenUtility/Utility/3D/CTexture.d: \
  ../src/OpenUtility/Utility/3D/../../Template/Res/CVector.cxx \
  ../src/OpenUtility/Utility/3D/../../Template/Res/../../Utility/Memory.h \
  ../src/OpenUtility/Utility/3D/../../Template/Res/../../Utility/CodeErreur.h \
- ../src/OpenUtility/Utility/3D/../Filesystem/FileHandling.h \
- ../src/OpenUtility/Utility/3D/../Filesystem/../Stream/Stream.h
+ ../src/OpenUtility/Utility/3D/../FileSystem/FileHandling.h \
+ ../src/OpenUtility/Utility/3D/../FileSystem/../Stream/Stream.h
 
 ../src/OpenUtility/Utility/3D/CTexture.h:
 
@@ -28,6 +28,6 @@ src/OpenUtility/Utility/3D/CTexture.d: \
 
 ../src/OpenUtility/Utility/3D/../../Template/Res/../../Utility/CodeErreur.h:
 
-../src/OpenUtility/Utility/3D/../Filesystem/FileHandling.h:
+../src/OpenUtility/Utility/3D/../FileSystem/FileHandling.h:
 
-../src/OpenUtility/Utility/3D/../Filesystem/../Stream/Stream.h:
+../src/OpenUtility/Utility/3D/../FileSystem/../Stream/Stream.h:

@@ -2,7 +2,6 @@
 	#define _CGENERAL_H
 
 #include<iostream>
-#include "../graphic/TaskBar.h"
 #include "../model/Model.h"
 #include <list>
 #include "../GlWindow.h"

@@ -4,7 +4,7 @@
 LayoutTransport::LayoutTransport():Layout(){
 	this->lButtons.push_back(new mButton("Transport en commun","",SQUARE ));
 	this->lButtons.push_back(new mButton("Taxi", "", SQUARE));
-	this->lButtons.push_back(new mButton("Aéroport", "", SQUARE));
+	this->lButtons.push_back(new mButton("Aeroport", "", SQUARE));
 	this->lButtons.push_back(new mButton("Close", "", CIRCLE ));
 	this->nbButtonSquare = 3;
 }

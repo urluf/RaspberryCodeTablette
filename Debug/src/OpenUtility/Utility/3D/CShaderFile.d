@@ -16,7 +16,9 @@ src/OpenUtility/Utility/3D/CShaderFile.d: \
  ../src/OpenUtility/Utility/3D/../../Template/Res/CAllocator.cxx \
  ../src/OpenUtility/Utility/3D/../../Template/Res/CMap.cxx \
  ../src/OpenUtility/Utility/3D/../../Template/CVector.h \
- ../src/OpenUtility/Utility/3D/../../Template/Res/CVector.cxx
+ ../src/OpenUtility/Utility/3D/../../Template/Res/CVector.cxx \
+ ../src/OpenUtility/Utility/3D/../OUException.h \
+ ../src/OpenUtility/Utility/3D/../Stream/Stream.h
 
 /opt/vc/include/GLES2/gl2.h:
 
@@ -53,3 +55,7 @@ src/OpenUtility/Utility/3D/CShaderFile.d: \
 ../src/OpenUtility/Utility/3D/../../Template/CVector.h:
 
 ../src/OpenUtility/Utility/3D/../../Template/Res/CVector.cxx:
+
+../src/OpenUtility/Utility/3D/../OUException.h:
+
+../src/OpenUtility/Utility/3D/../Stream/Stream.h:

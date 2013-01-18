@@ -9,7 +9,6 @@
 #include <Utility/3D/CTextureQuad.h>
 #include "graphic/DrawSquare.h"
 #include "graphic/DrawCircle.h"
-#include "graphic/TaskBar.h"
 #include "SShaders.h"
 #include "controller/ControllerMain.h"
 

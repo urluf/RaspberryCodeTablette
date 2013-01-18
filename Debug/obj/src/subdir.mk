@@ -3,6 +3,11 @@
 ################################################################################
 
 # Add inputs and outputs from these tool invocations to the build variables 
+O_SRCS += \
+../obj/src/Client.o \
+../obj/src/GlWindow.o \
+../obj/src/borne.o 
+
 
 # Each subdirectory must supply rules for building sources it contributes
 

@@ -1,19 +1,11 @@
 src/controller/ControllerMain.d: ../src/controller/ControllerMain.cpp \
  ../src/controller/ControllerMain.h ../src/controller/ControllerGeneral.h \
- ../src/controller/../graphic/TaskBar.h \
- ../src/controller/../graphic/DrawSquare.h /opt/vc/include/GLES2/gl2.h \
- /opt/vc/include/GLES2/gl2platform.h /opt/vc/include/KHR/khrplatform.h \
- ../src/controller/../graphic/../OpenUtility/Utility/3D/CTextureQuad.h \
- ../src/controller/../graphic/../OpenUtility/Utility/3D/CTexture.h \
- ../src/controller/../graphic/../OpenUtility/Utility/3D/../../Template/CVector.h \
- ../src/controller/../graphic/../OpenUtility/Utility/3D/../../Template/CContenerInterface.h \
- ../src/controller/../graphic/../OpenUtility/Utility/3D/../../Template/Res/CVector.cxx \
- ../src/controller/../graphic/../OpenUtility/Utility/3D/../../Template/Res/../../Utility/Memory.h \
- ../src/controller/../graphic/../OpenUtility/Utility/3D/../../Template/Res/../../Utility/CodeErreur.h \
  ../src/controller/../model/Model.h \
  ../src/controller/../model/../Observable.h \
  ../src/controller/../model/../Observer.h ../src/controller/../GlWindow.h \
- /opt/vc/include/EGL/egl.h /opt/vc/include/EGL/eglplatform.h \
+ /opt/vc/include/GLES2/gl2.h /opt/vc/include/GLES2/gl2platform.h \
+ /opt/vc/include/KHR/khrplatform.h /opt/vc/include/EGL/egl.h \
+ /opt/vc/include/EGL/eglplatform.h \
  /opt/vc/include/EGL/../KHR/khrplatform.h /opt/vc/include/bcm_host.h \
  /opt/vc/include/interface/vmcs_host/vc_dispmanx.h \
  /opt/vc/include/interface/vcos/vcos.h \
@@ -79,7 +71,8 @@ src/controller/ControllerMain.d: ../src/controller/ControllerMain.cpp \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/Parallelism/MultiThread.h \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/Stream/Stream.h \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/CTable.h \
- /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/../Utility/Memory.h \
+ /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/Memory.h \
+ /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/CodeErreur.h \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/Res/CTable.cxx \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/Res/../../Utility/Memory.h \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/CListe.h \
@@ -112,39 +105,35 @@ src/controller/ControllerMain.d: ../src/controller/ControllerMain.cpp \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/Res/CMap.cxx \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/Res/../../Utility/Memory.h \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/CVector.h \
+ /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/CContenerInterface.h \
+ /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/Res/CVector.cxx \
+ /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../OUException.h \
+ /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../Stream/Stream.h \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/CTexture.h \
  /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/CTextureQuad.h \
- ../src/controller/../graphic/TaskBar.h \
+ /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/CTexture.h \
+ /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/C3DText.h \
+ /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/CFontEngine.h \
+ /usr/local/include/ft2build.h \
+ /usr/local/include/freetype/config/ftheader.h \
+ /usr/local/include/freetype2/freetype/freetype.h \
+ /usr/local/include/freetype/config/ftconfig.h \
+ /usr/local/include/freetype/config/ftoption.h \
+ /usr/local/include/freetype/config/ftstdlib.h \
+ /usr/local/include/freetype/fterrors.h \
+ /usr/local/include/freetype/ftmoderr.h \
+ /usr/local/include/freetype/fterrdef.h \
+ /usr/local/include/freetype/fttypes.h \
+ /usr/local/include/freetype/ftsystem.h \
+ /usr/local/include/freetype/ftimage.h \
+ /home/developpeur/workspace/RaspberryPi/src/OpenUtility/../OpenUtility/Utility/3D/CFontEngine.h \
  ../src/controller/../graphic/../SShaders.h \
- ../src/controller/../graphic/DrawCircle.h
+ ../src/controller/../graphic/DrawCircle.h \
+ ../src/controller/../graphic/DrawSquare.h
 
 ../src/controller/ControllerMain.h:
 
 ../src/controller/ControllerGeneral.h:
-
-../src/controller/../graphic/TaskBar.h:
-
-../src/controller/../graphic/DrawSquare.h:
-
-/opt/vc/include/GLES2/gl2.h:
-
-/opt/vc/include/GLES2/gl2platform.h:
-
-/opt/vc/include/KHR/khrplatform.h:
-
-../src/controller/../graphic/../OpenUtility/Utility/3D/CTextureQuad.h:
-
-../src/controller/../graphic/../OpenUtility/Utility/3D/CTexture.h:
-
-../src/controller/../graphic/../OpenUtility/Utility/3D/../../Template/CVector.h:
-
-../src/controller/../graphic/../OpenUtility/Utility/3D/../../Template/CContenerInterface.h:
-
-../src/controller/../graphic/../OpenUtility/Utility/3D/../../Template/Res/CVector.cxx:
-
-../src/controller/../graphic/../OpenUtility/Utility/3D/../../Template/Res/../../Utility/Memory.h:
-
-../src/controller/../graphic/../OpenUtility/Utility/3D/../../Template/Res/../../Utility/CodeErreur.h:
 
 ../src/controller/../model/Model.h:
 
@@ -153,6 +142,12 @@ src/controller/ControllerMain.d: ../src/controller/ControllerMain.cpp \
 ../src/controller/../model/../Observer.h:
 
 ../src/controller/../GlWindow.h:
+
+/opt/vc/include/GLES2/gl2.h:
+
+/opt/vc/include/GLES2/gl2platform.h:
+
+/opt/vc/include/KHR/khrplatform.h:
 
 /opt/vc/include/EGL/egl.h:
 
@@ -290,7 +285,9 @@ src/controller/ControllerMain.d: ../src/controller/ControllerMain.cpp \
 
 /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/CTable.h:
 
-/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/../Utility/Memory.h:
+/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/Memory.h:
+
+/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/CodeErreur.h:
 
 /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Template/Res/CTable.cxx:
 
@@ -356,12 +353,52 @@ src/controller/ControllerMain.d: ../src/controller/ControllerMain.cpp \
 
 /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/CVector.h:
 
+/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/CContenerInterface.h:
+
+/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../../Template/Res/CVector.cxx:
+
+/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../OUException.h:
+
+/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/../Stream/Stream.h:
+
 /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/CTexture.h:
 
 /home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/CTextureQuad.h:
 
-../src/controller/../graphic/TaskBar.h:
+/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/CTexture.h:
+
+/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/C3DText.h:
+
+/home/developpeur/workspace/RaspberryPi/src/OpenUtility/Utility/3D/CFontEngine.h:
+
+/usr/local/include/ft2build.h:
+
+/usr/local/include/freetype/config/ftheader.h:
+
+/usr/local/include/freetype2/freetype/freetype.h:
+
+/usr/local/include/freetype/config/ftconfig.h:
+
+/usr/local/include/freetype/config/ftoption.h:
+
+/usr/local/include/freetype/config/ftstdlib.h:
+
+/usr/local/include/freetype/fterrors.h:
+
+/usr/local/include/freetype/ftmoderr.h:
+
+/usr/local/include/freetype/fterrdef.h:
+
+/usr/local/include/freetype/fttypes.h:
+
+/usr/local/include/freetype/ftsystem.h:
+
+/usr/local/include/freetype/ftimage.h:
+
+/home/developpeur/workspace/RaspberryPi/src/OpenUtility/../OpenUtility/Utility/3D/CFontEngine.h:
 
 ../src/controller/../graphic/../SShaders.h:
 
 ../src/controller/../graphic/DrawCircle.h:
+
+../src/controller/../graphic/DrawSquare.h:

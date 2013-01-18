@@ -15,7 +15,7 @@ RM := rm -rf
 -include src/OpenUtility/Utility/Parallelism/subdir.mk
 -include src/OpenUtility/Utility/Network/subdir.mk
 -include src/OpenUtility/Utility/Math/subdir.mk
--include src/OpenUtility/Utility/Filesystem/subdir.mk
+-include src/OpenUtility/Utility/FileSystem/subdir.mk
 -include src/OpenUtility/Utility/3D/subdir.mk
 -include src/OpenUtility/Utility/subdir.mk
 -include src/subdir.mk
@@ -25,6 +25,8 @@ RM := rm -rf
 -include obj/src/OpenUtility/Utility/Math/subdir.mk
 -include obj/src/OpenUtility/Utility/Filesystem/subdir.mk
 -include obj/src/OpenUtility/Utility/3D/subdir.mk
+-include obj/src/OpenUtility/Utility/subdir.mk
+-include obj/src/subdir.mk
 -include include/vjson/subdir.mk
 -include subdir.mk
 -include objects.mk
@@ -61,7 +63,7 @@ all: RaspberryPi
 RaspberryPi: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C++ Linker'
-	arm-linux-gnueabihf-g++ -L/opt/vc/lib -L/home/developpeur/workspace/RaspberryPi/include/libpng -L/home/developpeur/workspace/RaspberryPi/libs -L/home/developpeur/workspace/RaspberryPi/libs/libpng -rdynamic -pthread -Wl,-rpath /opt/vc/lib -Wl,-rpath-link /opt/vc/lib -Wl,-rpath-link /home/developpeur/workspace/RaspberryPi/libs -o "RaspberryPi" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-linux-gnueabihf-g++ -L/opt/vc/lib -L/usr/local/include/freetype2/freetype/config -L/usr/local/lib -L/usr/local/include/freetype2/freetype/ -L/usr/local/include/freetype2 -L/usr/local/include/ -L/home/developpeur/workspace/RaspberryPi/include/libpng -L/home/developpeur/workspace/RaspberryPi/libs -L/home/developpeur/workspace/RaspberryPi/libs/libpng -rdynamic -pthread -Wl,-rpath /opt/vc/lib -Wl,-rpath-link /opt/vc/lib -Wl,-rpath-link /home/developpeur/workspace/RaspberryPi/libs -o "RaspberryPi" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

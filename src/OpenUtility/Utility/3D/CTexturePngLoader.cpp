@@ -3,13 +3,13 @@
 #include <string.h>
 #include <png.h>
 
-bool CTexturePngLoader::IsCapable(const char *ext)
+bool OpenUtility::CTexturePngLoader::IsCapable(const char *ext)
 {
 	if (CTextureLoader::IsCapable(ext,"png")) return(true);
 	return(false);
 }
 
-unsigned char* CTexturePngLoader::Load(const char *file,unsigned long &w,unsigned long &h,bool nonPowerOf2)
+unsigned char* OpenUtility::CTexturePngLoader::Load(const char *file,unsigned long &w,unsigned long &h,CTexture::EPicMode &channel)
 {
 	FILE *fp;
 	png_byte header[8];
@@ -36,7 +36,7 @@ unsigned char* CTexturePngLoader::Load(const char *file,unsigned long &w,unsigne
 	}
 
 	// create png info struct
-	if ((info_ptr= png_create_info_struct(png_ptr))==0)
+	if ((info_ptr=png_create_info_struct(png_ptr))==0)
 	{
 		png_destroy_read_struct(&png_ptr,(png_infopp)NULL,(png_infopp)NULL);
 		fclose(fp);
@@ -69,10 +69,33 @@ unsigned char* CTexturePngLoader::Load(const char *file,unsigned long &w,unsigne
 	png_read_info(png_ptr,info_ptr);
 
 	// variables to pass to get info
-	int bit_depth,color_type;
+	int bit_depth,color_type,bytePerPixel;
 
 	// get info about png
 	png_get_IHDR(png_ptr,info_ptr,&w,&h,&bit_depth,&color_type,NULL,NULL,NULL);
+	if (bit_depth!=8)
+	{
+		png_destroy_read_struct(&png_ptr,&info_ptr,&end_info);
+		fclose(fp);
+		return NULL;
+	}
+	switch (color_type)
+	{
+	case PNG_COLOR_TYPE_RGB:
+		bytePerPixel=3;
+		channel=CTexture::EPModeRGB;
+		break;
+
+	case PNG_COLOR_TYPE_RGB_ALPHA:
+		bytePerPixel=4;
+		channel=CTexture::EPModeRGBA;
+		break;
+
+	default:
+		png_destroy_read_struct(&png_ptr,&info_ptr,&end_info);
+		fclose(fp);
+		return NULL;
+	}
 
 	// Update the png info struct.
 	png_read_update_info(png_ptr,info_ptr);
@@ -116,7 +139,7 @@ unsigned char* CTexturePngLoader::Load(const char *file,unsigned long &w,unsigne
 	return(image_data);
 }
 
-void CTexturePngLoader::DestroyData(unsigned char *data)
+void OpenUtility::CTexturePngLoader::DestroyData(unsigned char *data)
 {
 	free(data);
 }

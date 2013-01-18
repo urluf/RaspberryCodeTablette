@@ -32,6 +32,12 @@
 								<option id="gnu.cpp.compiler.exe.debug.option.debugging.level.1192862596" name="Debug Level" superClass="gnu.cpp.compiler.exe.debug.option.debugging.level" value="gnu.cpp.compiler.debugging.level.default" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.include.paths.521813086" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="/home/developpeur/workspace/RaspberryPi/include/"/>
+									<listOptionValue builtIn="false" value="/home/developpeur/workspace/RaspberryPi/include/freetype"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/freetype2/freetype/config"/>
+									<listOptionValue builtIn="false" value="/include/freetype2"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/freetype2/freetype/"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/freetype2"/>
 									<listOptionValue builtIn="false" value="/home/raspberry/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/include"/>
 									<listOptionValue builtIn="false" value="/opt/vc/include/"/>
 									<listOptionValue builtIn="false" value="/opt/vc/include/interface/vcos/pthreads"/>
@@ -74,6 +80,7 @@
 								<option id="gnu.c.compiler.exe.debug.option.debugging.level.983743659" name="Debug Level" superClass="gnu.c.compiler.exe.debug.option.debugging.level" value="gnu.c.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.include.paths.726966400" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="/home/raspberry/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/arm-linux-gnueabihf/include"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/freetype2/freetype/"/>
 									<listOptionValue builtIn="false" value="/home/developpeur/workspace/RaspberryPi/include"/>
 									<listOptionValue builtIn="false" value="/opt/vc/include/"/>
 									<listOptionValue builtIn="false" value="/opt/vc/include/interface/vcos/pthreads"/>
@@ -109,6 +116,8 @@
 							<tool command="arm-linux-gnueabihf-g++" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" id="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug.1357115120" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug">
 								<option id="gnu.cpp.link.option.libs.1807844162" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs">
 									<listOptionValue builtIn="false" value="GLESv2"/>
+									<listOptionValue builtIn="false" value="z"/>
+									<listOptionValue builtIn="false" value="freetype"/>
 									<listOptionValue builtIn="false" value="png"/>
 									<listOptionValue builtIn="false" value="EGL"/>
 									<listOptionValue builtIn="false" value="openmaxil"/>
@@ -117,6 +126,11 @@
 								</option>
 								<option id="gnu.cpp.link.option.paths.1145054698" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
 									<listOptionValue builtIn="false" value="/opt/vc/lib"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/freetype2/freetype/config"/>
+									<listOptionValue builtIn="false" value="/usr/local/lib"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/freetype2/freetype/"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/freetype2"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/"/>
 									<listOptionValue builtIn="false" value="/home/developpeur/workspace/RaspberryPi/include/libpng"/>
 									<listOptionValue builtIn="false" value="/home/developpeur/workspace/RaspberryPi/libs"/>
 									<listOptionValue builtIn="false" value="/home/developpeur/workspace/RaspberryPi/libs/libpng"/>
@@ -207,13 +221,14 @@
 		<resource resourceType="PROJECT" workspacePath="/RaspberryPi"/>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
+	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
 	<storageModule moduleId="scannerConfiguration">
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.release.269062599;cdt.managedbuild.config.gnu.exe.release.269062599.;cdt.managedbuild.tool.gnu.c.compiler.exe.release.739326468;cdt.managedbuild.tool.gnu.c.compiler.input.1872635702">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC"/>
-		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.release.269062599;cdt.managedbuild.config.gnu.exe.release.269062599.;cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.953988484;cdt.managedbuild.tool.gnu.cpp.compiler.input.1887495082">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileCPP"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.release.269062599;cdt.managedbuild.config.gnu.exe.release.269062599.;cdt.managedbuild.tool.gnu.c.compiler.exe.release.739326468;cdt.managedbuild.tool.gnu.c.compiler.input.1872635702">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC"/>
 		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.debug.1245532817;cdt.managedbuild.config.gnu.exe.debug.1245532817.;cdt.managedbuild.tool.gnu.c.compiler.exe.debug.484342828;cdt.managedbuild.tool.gnu.c.compiler.input.1166691351">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC"/>
@@ -222,5 +237,4 @@
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileCPP"/>
 		</scannerConfigBuildInfo>
 	</storageModule>
-	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
 </cproject>

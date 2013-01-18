@@ -6,7 +6,8 @@
 #include <Utility/3D/CShaderProgram.h>
 #include <Utility/3D/CTexture.h>
 #include <Utility/3D/CTextureQuad.h>
-#include "TaskBar.h"
+#include <Utility/3D/C3DText.h>
+#include <../OpenUtility/Utility/3D/CFontEngine.h>
 #include "../model/mButton.h"
 #include "../SShaders.h"
 #include "../EnumTypeButton.h"
@@ -27,15 +28,18 @@ class Window{
 protected:
 	OpenUtility::CMat4x4<float> Pmatrix;
 	DrawSquare *taskBar;
-	CTextureQuad *logo;
+	OpenUtility::CTextureQuad *logo;
 	SShaders *Shaders;
 	Layout *layout;
 	float Height, Width;
 	int nbButtonSquare;
 	GLuint VBOtex;
 	GLuint VBOtexIcon;
-	CTexture *textureFondBouton;
-	CTexture *textureIcone;
+	OpenUtility::CFontLoader *Font40;
+	OpenUtility::CTexture *textureFondBouton;
+	OpenUtility::CTexture *textureIcone;
+	OpenUtility::C3DText *_3dText;
+
 
 
 public:
